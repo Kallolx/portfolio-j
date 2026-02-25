@@ -36,3 +36,22 @@ body {
   color: var(--text-primary);
   font-family: var(--font-serif), serif;
 }
+
+/* Color cycling button used in Blogs section */
+@keyframes cycleColors {
+  0% { background: var(--primary); color: #fff; }
+  33% { background: #ff7a18; color: #fff; }
+  66% { background: #fff; color: #ff7a18; }
+ 100% { background: var(--primary); color: #fff; }
+}
+
+.color-cycle {
+  animation: cycleColors 1.2s linear infinite;
+  border-radius: 9999px;
+  padding: 0.45rem 0.9rem;
+  display: inline-block;
+}
+
+.blogs-overlay {
+  backdrop-filter: blur(2px);
+}

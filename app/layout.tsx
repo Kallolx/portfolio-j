@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Instrument_Serif, IBM_Plex_Mono } from "next/font/google";
+import SmoothScrollProvider from "@/components/SmoothScrollProvider";
+import Footer from "@/components/Footer";
 import "./globals.css";
 
 const instrumentSerif = Instrument_Serif({
@@ -29,7 +31,10 @@ export default function RootLayout({
       <body
         className={`${instrumentSerif.variable} ${ibmPlexMono.variable} antialiased`}
       >
-        {children}
+        <SmoothScrollProvider>
+          {children}
+          <Footer />
+        </SmoothScrollProvider>
       </body>
     </html>
   );

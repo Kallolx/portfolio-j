@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import ProjectCard from "@/components/ProjectCard";
 
 export default function Hero() {
   const [currentTime, setCurrentTime] = useState("");
@@ -39,7 +40,7 @@ export default function Hero() {
           >
             <div className="absolute inset-0 opacity-30 mix-blend-multiply">
               <Image
-                src="/img/texture.jpg"
+                src="/img/texture.png"
                 alt=""
                 fill
                 className="object-cover"
@@ -66,21 +67,22 @@ export default function Hero() {
             </div>
           </motion.div>
 
-          {/* 3rd Box - Empty */}
+          {/* 3rd Box - Projects Showcase */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
             className="col-span-2 h-100 border border-[#acc4ff]/30 rounded-2xl bg-[var(--background)] relative z-10 overflow-hidden"
           >
-            <div className="absolute inset-0 opacity-30 mix-blend-multiply">
+            <div className="absolute inset-0 opacity-30 mix-blend-multiply pointer-events-none">
               <Image
-                src="/img/texture.jpg"
+                src="/img/texture.png"
                 alt=""
                 fill
                 className="object-cover"
               />
             </div>
+            <ProjectCard />
           </motion.div>
 
           {/* Bottom Row - 6 Small Boxes */}
@@ -93,7 +95,7 @@ export default function Hero() {
           >
             <div className="absolute inset-0 opacity-30 mix-blend-multiply">
               <Image
-                src="/img/texture.jpg"
+                src="/img/texture.png"
                 alt=""
                 fill
                 className="object-cover"
@@ -122,7 +124,7 @@ export default function Hero() {
           >
             <div className="absolute inset-0 opacity-30 mix-blend-multiply">
               <Image
-                src="/img/texture.jpg"
+                src="/img/texture.png"
                 alt=""
                 fill
                 className="object-cover"
@@ -142,7 +144,7 @@ export default function Hero() {
           >
             <div className="absolute inset-0 opacity-30 mix-blend-multiply">
               <Image
-                src="/img/texture.jpg"
+                src="/img/texture.png"
                 alt=""
                 fill
                 className="object-cover"
@@ -168,7 +170,7 @@ export default function Hero() {
           >
             <div className="absolute inset-0 opacity-30 mix-blend-multiply">
               <Image
-                src="/img/texture.jpg"
+                src="/img/texture.png"
                 alt=""
                 fill
                 className="object-cover"
@@ -192,7 +194,7 @@ export default function Hero() {
             initial={{ scale: 0, rotate: 0 }}
             animate={{ scale: 1, rotate: 360 }}
             transition={{ duration: 0.8, delay: 1.2 }}
-            className="absolute top-[25rem] left-[33.33%] -translate-x-1/2 -translate-y-1/2 w-4 h-4 pointer-events-none z-10"
+            className="absolute top-[25rem] left-[33.33%] -translate-x-1/2 -translate-y-1/2 w-3 h-3 pointer-events-none z-10"
           >
             <svg
               viewBox="0 0 24 24"
@@ -211,7 +213,7 @@ export default function Hero() {
             initial={{ scale: 0, rotate: 0 }}
             animate={{ scale: 1, rotate: 360 }}
             transition={{ duration: 0.8, delay: 1.3 }}
-            className="absolute top-[25rem] left-[66.67%] -translate-x-1/2 -translate-y-1/2 w-4 h-4 pointer-events-none z-10"
+            className="absolute top-[25rem] left-[66.67%] -translate-x-1/2 -translate-y-1/2 w-3 h-3 pointer-events-none z-10"
           >
             <svg
               viewBox="0 0 24 24"
@@ -230,7 +232,7 @@ export default function Hero() {
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ duration: 0.6, delay: 1.4 }}
-            className="absolute top-[25rem] left-[16.67%] -translate-x-1/2 -translate-y-1/2 w-4 h-4 pointer-events-none z-0"
+            className="absolute top-[25rem] left-[16.67%] -translate-x-1/2 -translate-y-1/2 w-3 h-3 pointer-events-none z-0"
           >
             <svg
               viewBox="0 0 24 24"
@@ -249,7 +251,7 @@ export default function Hero() {
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ duration: 0.6, delay: 1.5 }}
-            className="absolute top-[25rem] left-[83.33%] -translate-x-1/2 -translate-y-1/2 w-4 h-4 pointer-events-none z-0"
+            className="absolute top-[25rem] left-[83.33%] -translate-x-1/2 -translate-y-1/2 w-3 h-3 pointer-events-none z-0"
           >
             <svg
               viewBox="0 0 24 24"
