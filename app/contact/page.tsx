@@ -1,17 +1,45 @@
+"use client";
+
+import { motion } from "framer-motion";
 import ContactSection from "@/components/Contact";
 
-export default function Contact() {
+export default function ContactPage() {
   return (
-    <div className="max-w-6xl mx-auto px-6 lg:px-8 pt-32 pb-20">
-      <h1 className="text-4xl md:text-6xl mb-8 font-serif text-primary">
-        Contact
-      </h1>
-      <p className="text-lg md:text-xl text-[var(--text-secondary)] font-mono mb-12">
-        Let&apos;s build something great together. Use the form below or reach
-        out via my socials.
-      </p>
-      {/* Reusing existing contact component for the actual form and details */}
-      <ContactSection />
-    </div>
+    <>
+      <div className="max-w-5xl mx-auto px-6 pt-48 pb-6">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_2fr] gap-12 lg:gap-24 items-start">
+          {/* Left Side: Heading */}
+          <h1 className="text-7xl font-serif text-primary tracking-tighter leading-none transition-all">
+            Contact
+          </h1>
+
+          {/* Right Side: Content & Image */}
+          <div className="relative">
+            <div className="flex flex-col gap-8 max-w-lg relative z-10">
+              {/* Solid Contact Image Box */}
+              <div className="shrink-0 w-28 h-34 rounded-2xl bg-primary flex items-center justify-center text-white font-mono text-xl">
+                JP
+              </div>
+
+              {/* Description Text */}
+              <p className="font-mono text-primary text-md leading-relaxed tracking-tight">
+                I believe design should be invisible until it needs to be seen.
+                My focus is creating experiences that feel intuitive, reduce
+                friction, and leave a lasting impression.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Contact Section */}
+      <div className="max-w-6xl mx-auto pb-24">
+        <ContactSection
+          showHeader={false}
+          isFullPage={true}
+          isTransparent={false}
+        />
+      </div>
+    </>
   );
 }

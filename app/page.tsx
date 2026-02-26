@@ -16,8 +16,10 @@ export default function Home() {
       <Statistics />
       <Testimonials />
       <Services />
-      <Blogs />
-      <Contact />
+      <Blogs limit={2} />
+      <div className="pt-14 pb-20">
+        <Contact />
+      </div>
     </>
   );
 }

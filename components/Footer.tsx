@@ -29,7 +29,13 @@ const utilityLinks = [{ label: "404", href: "/404" }];
 // Clean modern diagonal (↗) arrow
 function ArrowDiagonal() {
   return (
-    <svg width="15" height="15" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      width="15"
+      height="15"
+      viewBox="0 0 12 12"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <path
         d="M2 10L10 2M10 2H4M10 2V8"
         stroke="currentColor"
@@ -44,7 +50,13 @@ function ArrowDiagonal() {
 // Clean modern right (→) arrow
 function ArrowRight() {
   return (
-    <svg width="15" height="15" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      width="15"
+      height="15"
+      viewBox="0 0 12 12"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <path
         d="M2 6H10M10 6L6.5 2.5M10 6L6.5 9.5"
         stroke="currentColor"
@@ -108,7 +120,10 @@ function SocialLink({ label, href }: { label: string; href: string }) {
           preserveAspectRatio="none"
         >
           <line
-            x1="0" y1="1" x2="100%" y2="1"
+            x1="0"
+            y1="1"
+            x2="100%"
+            y2="1"
             stroke="rgba(255, 255, 255)"
             strokeWidth="1"
             strokeDasharray="1.5 3"
@@ -136,9 +151,9 @@ function NavLink({ label, href }: { label: string; href: string }) {
       href={href}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="font-mono text-md text-white block w-fit tracking-tight"
+      className="font-mono text-md text-white block w-fit tracking-tight whitespace-nowrap"
       style={{
-        textDecoration: isActive ? "underline" : "none",
+        textDecoration: isActive || hovered ? "underline" : "none",
         textUnderlineOffset: "4px",
       }}
     >
@@ -154,10 +169,8 @@ export default function Footer() {
       style={{ backgroundColor: "var(--primary)" }}
     >
       <div className="max-w-6xl mx-auto">
-
         {/* Two boxes */}
         <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-4 mb-4 pt-14">
-
           {/* ── Left box ── */}
           <div
             className="rounded-2xl p-16 flex flex-col justify-between"
@@ -196,12 +209,9 @@ export default function Footer() {
               minHeight: "400px",
             }}
           >
-            <div className="grid grid-cols-3 gap-8">
-
+            <div className="flex flex-wrap justify-between gap-8">
               <div>
-                <p className="font-serif text-xl text-white mb-6">
-                  Main Page
-                </p>
+                <p className="font-serif text-xl text-white mb-6">Main Page</p>
                 <div className="flex flex-col gap-2">
                   {mainLinks.map((l) => (
                     <NavLink key={l.href} label={l.label} href={l.href} />
@@ -210,9 +220,7 @@ export default function Footer() {
               </div>
 
               <div>
-                <p className="font-serif text-xl text-white mb-6">
-                  Inner Page
-                </p>
+                <p className="font-serif text-xl text-white mb-6">Inner Page</p>
                 <div className="flex flex-col gap-2">
                   {innerLinks.map((l) => (
                     <NavLink key={l.href} label={l.label} href={l.href} />
@@ -230,19 +238,22 @@ export default function Footer() {
                   ))}
                 </div>
               </div>
-
             </div>
           </div>
-
         </div>
 
         {/* Bottom bar */}
         <div className="flex flex-col md:flex-row items-center tracking-tighter justify-between gap-3 px-2 pt-4">
-          <span className="font-mono text-md text-white">Designed by: Framerze</span>
-          <span className="font-mono text-md text-white">Copyright ©James Parker, All right reserved</span>
-          <span className="font-mono text-md text-white">Powered by: Framer</span>
+          <span className="font-mono text-md text-white">
+            Designed by: Framerze
+          </span>
+          <span className="font-mono text-md text-white">
+            Copyright ©James Parker, All right reserved
+          </span>
+          <span className="font-mono text-md text-white">
+            Powered by: Framer
+          </span>
         </div>
-
       </div>
     </footer>
   );

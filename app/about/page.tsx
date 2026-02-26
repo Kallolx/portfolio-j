@@ -564,7 +564,9 @@ export default function About() {
       </section>
 
       <Testimonials />
-      <Contact />
+      <div className="max-w-5xl mx-auto pt-12">
+        <Contact />
+      </div>
     </>
   );
 }

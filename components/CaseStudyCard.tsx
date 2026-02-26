@@ -55,7 +55,7 @@ export default function CaseStudyCard({
           </div>
 
           {/* Title */}
-          <h3 className="font-serif text-white text-3xl lg:text-4xl leading-[1.2] tracking-tight mb-8 flex-1">
+          <h3 className="font-serif text-white text-3xl lg:text-5xl leading-[1.2] tracking-tight mb-8 flex-1">
             {project.title}
           </h3>
 
