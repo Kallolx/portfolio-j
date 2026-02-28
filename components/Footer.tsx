@@ -165,7 +165,7 @@ function NavLink({ label, href }: { label: string; href: string }) {
 export default function Footer() {
   return (
     <footer
-      className="px-6 lg:px-8 pt-8 pb-6"
+      className="px-3 md:px-6 lg:px-8 pt-8 pb-6"
       style={{ backgroundColor: "var(--primary)" }}
     >
       <div className="max-w-6xl mx-auto">
@@ -173,10 +173,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-4 mb-4 pt-14">
           {/* ── Left box ── */}
           <div
-            className="rounded-2xl p-16 flex flex-col justify-between"
+            className="rounded-2xl p-6 lg:p-16 flex flex-col justify-between min-h-[300px] lg:min-h-[400px]"
             style={{
               border: "1px solid rgba(255,255,255,0.22)",
-              minHeight: "400px",
             }}
           >
             <h2
@@ -203,10 +202,9 @@ export default function Footer() {
 
           {/* ── Right box ── */}
           <div
-            className="rounded-2xl p-12"
+            className="rounded-2xl p-6 lg:p-12 min-h-[300px] lg:min-h-[400px]"
             style={{
               border: "1px solid rgba(255,255,255,0.22)",
-              minHeight: "400px",
             }}
           >
             <div className="flex flex-wrap justify-between gap-8">
@@ -243,7 +241,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="flex flex-col md:flex-row items-center tracking-tighter justify-between gap-3 px-2 pt-4">
+        <div className="flex flex-col md:flex-row items-center justify-center md:justify-between tracking-tighter gap-3 px-2 pt-8 lg:pt-4 text-center">
           <span className="font-mono text-md text-white">
             Designed by: Framerze
           </span>

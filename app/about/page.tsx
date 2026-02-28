@@ -41,10 +41,10 @@ export default function About() {
 
   return (
     <>
-      <div className="max-w-5xl mx-auto px-6 pt-48 pb-24">
-        <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_2fr] gap-12 lg:gap-24 items-start">
+      <div className="max-w-5xl mx-auto px-3 md:px-6 pt-32 md:pt-48 pb-12 md:pb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_2fr] gap-8 md:gap-12 lg:gap-24 items-start">
           {/* Left Side: Heading */}
-          <h1 className="text-7xl font-serif text-primary tracking-tighter leading-none transition-all">
+          <h1 className="text-5xl md:text-7xl font-serif text-primary tracking-tighter leading-none transition-all">
             About Me
           </h1>
 
@@ -105,11 +105,11 @@ export default function About() {
       </div>
 
       {/* New Section: Who I am & My Vision */}
-      <section className="bg-primary py-24 px-6 lg:px-8">
+      <section className="bg-primary py-16 md:py-24 px-3 md:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-8 md:gap-16 items-center">
             {/* Left: Image Box */}
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-6 items-center lg:items-start text-center lg:text-left">
               <motion.div className="font-mono font-semibold text-white text-lg uppercase tracking-tight flex items-center h-5">
                 <motion.span>{displayText}</motion.span>
                 <motion.span
@@ -128,8 +128,8 @@ export default function About() {
             </div>
 
             {/* Right: Text & Animated Divider */}
-            <div className="space-y-10">
-              <p className="font-mono text-white text-base leading-relaxed opacity-90">
+            <div className="space-y-6 md:space-y-10 flex flex-col items-center lg:items-start text-center lg:text-left">
+              <p className="font-mono text-white text-base leading-relaxed opacity-90 max-w-2xl">
                 I am a designer driven by curiosity and craft. My work begins
                 with listening—uncovering the essence of each idea, brand, or
                 story. With every project, I strive to blend strategy with
@@ -161,10 +161,10 @@ export default function About() {
       </section>
 
       {/* New Section: Statistics */}
-      <section className="bg-background py-24 px-6 lg:px-8">
+      <section className="bg-background py-16 md:py-24 px-3 md:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           {/* Header Section */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-16">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-12 mb-10 md:mb-16">
             {/* Left Side - Title with Badge */}
             <div className="flex items-start gap-3">
               <StripeBadge
@@ -191,112 +191,130 @@ export default function About() {
 
           {/* Statistics Grid */}
           <div className="relative mt-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0">
+            <div className="grid grid-cols-2 lg:grid-cols-3 gap-0 border-collapse">
               {/* Card 1 */}
-              <div className="border border-primary/20 bg-background/50 rounded-2xl p-8 aspect-square flex flex-col justify-between hover:bg-white/50 transition-colors">
-                <span className="font-serif text-5xl text-primary tracking-tight">
+              <div className="border border-primary/20 bg-background/50 rounded-2xl p-4 md:p-8 aspect-square flex flex-col justify-between hover:bg-white/50 transition-colors relative z-0">
+                <span className="font-serif text-3xl md:text-5xl text-primary tracking-tight">
                   300+
                 </span>
-                <span className="font-mono text-primary text-sm font-medium pr-8">
+                <span className="font-mono text-primary text-[10px] md:text-sm font-medium pr-2 md:pr-8">
                   Design Concepts Explored
                 </span>
               </div>
 
               {/* Card 2 */}
-              <div className="border border-primary/20 bg-background/50 rounded-2xl p-8 aspect-square flex flex-col justify-between hover:bg-white/50 transition-colors">
-                <span className="font-serif text-5xl text-primary tracking-tight">
+              <div className="border border-primary/20 bg-background/50 rounded-2xl p-4 md:p-8 aspect-square flex flex-col justify-between hover:bg-white/50 transition-colors relative z-0">
+                <span className="font-serif text-3xl md:text-5xl text-primary tracking-tight">
                   50+
                 </span>
-                <span className="font-mono text-primary text-sm font-medium pr-8">
+                <span className="font-mono text-primary text-[10px] md:text-sm font-medium pr-2 md:pr-8">
                   Brands Transformed
                 </span>
               </div>
 
-              {/* Card 3 */}
-              <div className="border border-primary/20 bg-background/50 rounded-2xl p-8 aspect-square flex flex-col justify-between hover:bg-white/50 transition-colors">
-                <span className="font-serif text-5xl text-primary tracking-tight">
+              {/* Card 4 */}
+              <div className="border border-primary/20 bg-background/50 rounded-2xl p-4 md:p-8 aspect-square flex flex-col justify-between hover:bg-white/50 transition-colors relative z-0">
+                <span className="font-serif text-3xl md:text-5xl text-primary tracking-tight">
                   95%
                 </span>
-                <span className="font-mono text-primary text-sm font-medium pr-8">
+                <span className="font-mono text-primary text-[10px] md:text-sm font-medium pr-2 md:pr-8">
                   Client Satisfaction
                 </span>
               </div>
 
-              {/* Card 4 */}
-              <div className="border border-primary/20 bg-background/50 rounded-2xl p-8 aspect-square flex flex-col justify-between hover:bg-white/50 transition-colors">
-                <span className="font-serif text-5xl text-primary tracking-tight">
+              {/* Card 5 */}
+              <div className="border border-primary/20 bg-background/50 rounded-2xl p-4 md:p-8 aspect-square flex flex-col justify-between hover:bg-white/50 transition-colors relative z-0">
+                <span className="font-serif text-3xl md:text-5xl text-primary tracking-tight">
                   10+
                 </span>
-                <span className="font-mono text-primary text-sm font-medium pr-8">
+                <span className="font-mono text-primary text-[10px] md:text-sm font-medium pr-2 md:pr-8">
                   Years of Experience
                 </span>
               </div>
 
-              {/* Card 5 */}
-              <div className="border border-primary/20 bg-background/50 rounded-2xl p-8 aspect-square flex flex-col justify-between hover:bg-white/50 transition-colors">
-                <span className="font-serif text-5xl text-primary tracking-tight">
+              {/* Card 6 */}
+              <div className="border border-primary/20 bg-background/50 rounded-2xl p-4 md:p-8 aspect-square flex flex-col justify-between hover:bg-white/50 transition-colors relative z-0">
+                <span className="font-serif text-3xl md:text-5xl text-primary tracking-tight">
                   120+
                 </span>
-                <span className="font-mono text-primary text-sm font-medium pr-8">
+                <span className="font-mono text-primary text-[10px] md:text-sm font-medium pr-2 md:pr-8">
                   Projects Completed
                 </span>
               </div>
 
-              {/* Card 6 */}
-              <div className="border border-primary/20 bg-background/50 rounded-2xl p-8 aspect-square flex flex-col justify-between hover:bg-white/50 transition-colors">
-                <span className="font-serif text-5xl text-primary tracking-tight">
+              {/* Card 7 */}
+              <div className="border border-primary/20 bg-background/50 rounded-2xl p-4 md:p-8 aspect-square flex flex-col justify-between hover:bg-white/50 transition-colors relative z-0">
+                <span className="font-serif text-3xl md:text-5xl text-primary tracking-tight">
                   75+
                 </span>
-                <span className="font-mono text-primary text-sm font-medium pr-8">
+                <span className="font-mono text-primary text-[10px] md:text-sm font-medium pr-2 md:pr-8">
                   Happy Clients Worldwide
                 </span>
               </div>
             </div>
 
-            {/* Sparkle Icon at 1st-2nd / 4th-5th Box Intersection (Left Gap) */}
-            <motion.div
-              initial={{ scale: 0, rotate: 0 }}
-              whileInView={{ scale: 1, rotate: 360 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="hidden lg:block absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2 w-4 h-4 pointer-events-none z-10"
-            >
-              <svg
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-                className="w-full h-full"
-              >
-                <path
-                  d="M12 2 C13.2 8.8 15.2 10.8 22 12 C15.2 13.2 13.2 15.2 12 22 C10.8 15.2 8.8 13.2 2 12 C8.8 10.8 10.8 8.8 12 2Z"
-                  fill="#acc4ff"
-                />
-              </svg>
-            </motion.div>
+            {/* Desktop Sparkle Icons (3 columns) */}
+            <div className="hidden lg:block">
+              {[
+                { left: "33.33%", delay: 0.2 },
+                { left: "66.66%", delay: 0.3 },
+              ].map((pos, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ scale: 0, rotate: 0 }}
+                  whileInView={{ scale: 1, rotate: 360 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: pos.delay }}
+                  className="absolute top-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 pointer-events-none z-10"
+                  style={{ left: pos.left }}
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="w-full h-full"
+                  >
+                    <path
+                      d="M12 2 C13.2 8.8 15.2 10.8 22 12 C15.2 13.2 13.2 15.2 12 22 C10.8 15.2 8.8 13.2 2 12 C8.8 10.1 10.1 8.8 12 2Z"
+                      fill="#acc4ff"
+                    />
+                  </svg>
+                </motion.div>
+              ))}
+            </div>
 
-            {/* Sparkle Icon at 2nd-3rd / 5th-6th Box Intersection (Right Gap) */}
-            <motion.div
-              initial={{ scale: 0, rotate: 0 }}
-              whileInView={{ scale: 1, rotate: 360 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="hidden lg:block absolute top-1/2 left-2/3 -translate-x-1/2 -translate-y-1/2 w-4 h-4 pointer-events-none z-10"
-            >
-              <svg
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-                className="w-full h-full"
-              >
-                <path
-                  d="M12 2 C13.2 8.8 15.2 10.8 22 12 C15.2 13.2 13.2 15.2 12 22 C10.8 15.2 8.8 13.2 2 12 C8.8 10.8 10.8 8.8 12 2Z"
-                  fill="#acc4ff"
-                />
-              </svg>
-            </motion.div>
+            {/* Mobile Sparkle Icons (2 columns) */}
+            <div className="lg:hidden">
+              {[
+                { top: "33.33%", delay: 0.2 },
+                { top: "66.66%", delay: 0.3 },
+              ].map((pos, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ scale: 0, rotate: 0 }}
+                  whileInView={{ scale: 1, rotate: 360 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: pos.delay }}
+                  className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-3 pointer-events-none z-10"
+                  style={{ top: pos.top }}
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="w-full h-full"
+                  >
+                    <path
+                      d="M12 2 C13.2 8.8 15.2 10.8 22 12 C15.2 13.2 13.2 15.2 12 22 C10.8 15.2 8.8 13.2 2 12 C8.8 10.1 10.1 8.8 12 2Z"
+                      fill="#acc4ff"
+                    />
+                  </svg>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
 
         {/* Logo Loop Section */}
-        <div className="h-24 relative overflow-hidden bg-background mt-24">
+        <div className="h-24 relative overflow-hidden bg-background mt-12 md:mt-24">
           <StripePattern
             color="#0046FF"
             opacity={0.3}
@@ -320,10 +338,10 @@ export default function About() {
       </section>
 
       {/* New Section: Awards */}
-      <section className="bg-background py-24 px-6 lg:px-8">
+      <section className="bg-background py-16 md:py-24 px-6 md:px-8">
         <div className="max-w-4xl mx-auto">
           {/* Header Section */}
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-12 lg:gap-32 mb-24">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-8 md:gap-12 lg:gap-32 mb-12 md:mb-24">
             {/* Left Side - Title with Badge */}
             <div className="flex items-start gap-3">
               <StripeBadge
@@ -350,13 +368,9 @@ export default function About() {
           {/* Awards List */}
           <div className="flex flex-col">
             {/* Top Line */}
-            <motion.div
-              initial={{ width: "0%" }}
-              whileInView={{ width: "100%" }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 1, ease: "easeInOut" }}
-              className="h-[1px] bg-primary/20"
-            />
+            <div className="w-full">
+              <div className="h-[1.5px] bg-primary/20 w-full" />
+            </div>
 
             {/* Award Item 1: 2025 */}
             <div className="grid grid-cols-1 md:grid-cols-[1fr_3fr] gap-8 py-12 items-start group">
@@ -391,13 +405,9 @@ export default function About() {
             </div>
 
             {/* Middle Line */}
-            <motion.div
-              initial={{ width: "0%" }}
-              whileInView={{ width: "100%" }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 1, ease: "easeInOut" }}
-              className="h-[1px] bg-primary/20"
-            />
+            <div className="w-full">
+              <div className="h-[1.5px] bg-primary/20 w-full" />
+            </div>
 
             {/* Award Item 2: 2024 */}
             <div className="grid grid-cols-1 md:grid-cols-[1fr_3fr] gap-8 py-12 items-start group">
@@ -432,13 +442,9 @@ export default function About() {
             </div>
 
             {/* Middle Line */}
-            <motion.div
-              initial={{ width: "0%" }}
-              whileInView={{ width: "100%" }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 1, ease: "easeInOut" }}
-              className="h-[1px] bg-primary/20"
-            />
+            <div className="w-full">
+              <div className="h-[1.5px] bg-primary/20 w-full" />
+            </div>
 
             {/* Award Item 3: 2023 */}
             <div className="grid grid-cols-1 md:grid-cols-[1fr_3fr] gap-8 py-12 items-start group">
@@ -472,13 +478,9 @@ export default function About() {
             </div>
 
             {/* Middle Line */}
-            <motion.div
-              initial={{ width: "0%" }}
-              whileInView={{ width: "100%" }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 1, ease: "easeInOut" }}
-              className="h-[1px] bg-primary/20"
-            />
+            <div className="w-full">
+              <div className="h-[1.5px] bg-primary/20 w-full" />
+            </div>
 
             {/* Award Item 4: 2022 */}
             <div className="grid grid-cols-1 md:grid-cols-[1fr_3fr] gap-8 py-12 items-start group">
@@ -512,13 +514,9 @@ export default function About() {
             </div>
 
             {/* Middle Line */}
-            <motion.div
-              initial={{ width: "0%" }}
-              whileInView={{ width: "100%" }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 1, ease: "easeInOut" }}
-              className="h-[1px] bg-primary/20"
-            />
+            <div className="w-full">
+              <div className="h-[1.5px] bg-primary/20 w-full" />
+            </div>
 
             {/* Award Item 5: 2021 */}
             <div className="grid grid-cols-1 md:grid-cols-[1fr_3fr] gap-8 py-12 items-start group">
@@ -552,13 +550,18 @@ export default function About() {
             </div>
 
             {/* Final Bottom Line */}
-            <motion.div
-              initial={{ width: "0%" }}
-              whileInView={{ width: "100%" }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 1, ease: "easeInOut" }}
-              className="h-[1px] bg-primary/20"
-            />
+            <div className="w-full">
+              {/* Static line for mobile */}
+              <div className="h-[1px] bg-primary/20 w-full md:hidden" />
+              {/* Animated line for desktop */}
+              <motion.div
+                initial={{ width: "0%" }}
+                whileInView={{ width: "100%" }}
+                viewport={{ once: true, margin: "-20px" }}
+                transition={{ duration: 1, ease: "easeInOut" }}
+                className="h-[1px] bg-primary/20 hidden md:block"
+              />
+            </div>
           </div>
         </div>
       </section>

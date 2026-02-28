@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import StripeBadge from "./StripeBadge";
 
@@ -18,28 +18,31 @@ const services: Service[] = [
     title: "Web Design",
     description:
       "Crafting engaging websites that blend style with seamless usability.",
-    image: "https://images.unsplash.com/photo-1559028012-481c04fa702d?q=80&w=1036&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image:
+      "https://images.unsplash.com/photo-1559028012-481c04fa702d?q=80&w=1036&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     number: "00-2",
     title: "App Design",
     description:
       "Creating intuitive app experiences that delight and empower users.",
-    image: "https://images.unsplash.com/photo-1640920789307-1df7543f5828?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image:
+      "https://images.unsplash.com/photo-1640920789307-1df7543f5828?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     number: "00-3",
     title: "Brand Identity Design",
-    description:
-      "Designing identities where story meets timeless aesthetics.",
-    image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    description: "Designing identities where story meets timeless aesthetics.",
+    image:
+      "https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     number: "00-4",
     title: "Development",
     description:
       "Building robust digital solutions that perform and scale effortlessly.",
-    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image:
+      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
 ];
 
@@ -47,13 +50,26 @@ const EASE = [0.32, 0.72, 0, 1] as const;
 
 export default function Services() {
   const [active, setActive] = useState<number | null>(null);
+  const isTouch = useRef(false);
+
+  useEffect(() => {
+    const handleTouch = () => {
+      isTouch.current = true;
+    };
+    window.addEventListener("touchstart", handleTouch, { once: true });
+
+    if (window.innerWidth < 768) {
+      setActive(0);
+    }
+
+    return () => window.removeEventListener("touchstart", handleTouch);
+  }, []);
 
   return (
-    <section className="px-6 lg:px-8 py-8 bg-background">
+    <section className="px-3 md:px-6 lg:px-8 py-8 bg-background">
       <div className="max-w-6xl mx-auto">
-        <div className="p-12 lg:p-16">
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-16 items-start">
-
+        <div className="p-4 md:p-12 lg:p-16">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-10 lg:gap-16 items-start">
             {/* Left — badge + description */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -95,12 +111,16 @@ export default function Services() {
                   key={svc.number}
                   service={svc}
                   isActive={active === i}
-                  onEnter={() => setActive(i)}
-                  onLeave={() => setActive(null)}
+                  onEnter={() => !isTouch.current && setActive(i)}
+                  onLeave={() => !isTouch.current && setActive(null)}
+                  onClick={() => {
+                    if (isTouch.current) {
+                      setActive(active === i ? null : i);
+                    }
+                  }}
                 />
               ))}
             </motion.div>
-
           </div>
         </div>
       </div>
@@ -113,17 +133,20 @@ function ServiceCard({
   isActive,
   onEnter,
   onLeave,
+  onClick,
 }: {
   service: Service;
   isActive: boolean;
   onEnter: () => void;
   onLeave: () => void;
+  onClick: () => void;
 }) {
   return (
     <div
       onMouseEnter={onEnter}
       onMouseLeave={onLeave}
-      className="cursor-default overflow-hidden"
+      onClick={onClick}
+      className="cursor-pointer overflow-hidden"
       style={{
         borderLeft: "1.5px solid",
         borderRight: "1.5px solid",
@@ -152,8 +175,7 @@ function ServiceCard({
         />
       </motion.div>
 
-      <div className="p-6 pb-5 relative z-10">
-
+      <div className="p-4 lg:p-6 pb-3 lg:pb-5 relative z-10">
         {/* ── Collapsed state: number left + title right, collapses away on expand ── */}
         <motion.div
           animate={{ height: isActive ? 0 : "auto", opacity: isActive ? 0 : 1 }}
@@ -187,9 +209,9 @@ function ServiceCard({
           style={{ overflow: "hidden" }}
         >
           {/* number row inside expanded — flush, no extra top spacing */}
-          <div className="flex items-center gap-6">
+          <div className="flex flex-col md:flex-row items-stretch md:items-center gap-6">
             {/* Left: number + title + description stacked tightly */}
-            <div className="flex-1">
+            <div className="flex-1 w-full md:w-auto">
               <span className="font-mono text-md text-primary tracking-tight block mb-3">
                 {service.number}
               </span>
@@ -206,7 +228,7 @@ function ServiceCard({
 
             {/* Right: image */}
             <div
-              className="w-[200px] flex-shrink-0 self-start rounded-2xl overflow-hidden"
+              className="w-full md:w-[200px] flex-shrink-0 self-start rounded-2xl overflow-hidden"
               style={{
                 opacity: isActive ? 1 : 0,
                 transition: "opacity 0.3s ease",
@@ -215,15 +237,13 @@ function ServiceCard({
               <img
                 src={service.image}
                 alt={service.title}
-                className="w-full h-[200px] object-cover block"
+                className="w-full h-[180px] md:h-[200px] object-cover block"
                 loading="lazy"
               />
             </div>
           </div>
         </motion.div>
-
       </div>
     </div>
   );
 }
-

@@ -13,16 +13,18 @@ export default function Contact({
   isTransparent?: boolean;
 }) {
   return (
-    <section className="px-6 lg:px-8 py-8">
+    <section className="px-3 md:px-6 lg:px-8 py-8">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className={isTransparent ? "" : "bg-white rounded-3xl p-12 lg:p-16"}
+          className={
+            isTransparent ? "" : "bg-white rounded-3xl p-6 md:p-12 lg:p-16"
+          }
         >
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-12 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-6 md:gap-12 items-start">
             {/* Left column */}
             <div className="space-y-6">
               {showHeader && (

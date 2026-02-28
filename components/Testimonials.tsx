@@ -77,10 +77,10 @@ export default function Testimonials() {
   const current = testimonials[index];
 
   return (
-    <section className="px-6 lg:px-8 py-8 bg-primary">
+    <section className="px-3 md:px-6 lg:px-8 py-8 bg-primary">
       <div className="max-w-6xl mx-auto">
-        <div className="p-12 lg:p-16">
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.8fr] gap-20 items-start">
+        <div className="p-4 md:p-12 lg:p-16">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.8fr] gap-10 lg:gap-20 items-start">
             {/* Left — badge + description */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -116,7 +116,7 @@ export default function Testimonials() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.15 }}
-              className="relative h-[360px]"
+              className="relative min-h-[420px] md:min-h-[360px] h-auto flex flex-col"
             >
               <AnimatePresence mode="wait" custom={direction}>
                 <motion.div
@@ -127,7 +127,7 @@ export default function Testimonials() {
                   animate="center"
                   exit="exit"
                   transition={{ duration: 0.45, ease: [0.32, 0.72, 0, 1] }}
-                  className="absolute inset-0 flex flex-col"
+                  className="w-full h-full flex flex-col flex-1"
                 >
                   {/* Avatar + quote icon row */}
                   <div className="flex items-center justify-between mb-5">

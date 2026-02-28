@@ -15,7 +15,7 @@ export const projects: Project[] = [
   {
     id: 1,
     title: "Crafting Orrisé: An Immersive Study in Fragrance Identity",
-    image: "https://images.unsplash.com/photo-1523293182086-7651a899d37f?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "/img/1.png",
     year: 2025,
     client: "Orrisé Paris",
     projectType: "Branding",
@@ -31,7 +31,7 @@ export const projects: Project[] = [
   {
     id: 2,
     title: "Delivo: Creating a Visual Language for Seamless Dining Experiences",
-    image: "https://images.unsplash.com/photo-1561203326-d65d921b5939?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "/img/2.png",
     year: 2025,
     client: "Delivo",
     projectType: "UI Design",
@@ -47,7 +47,7 @@ export const projects: Project[] = [
   {
     id: 3,
     title: "Designing Clarity: Branding for a Real Estate Management System",
-    image: "https://images.unsplash.com/photo-1771520719118-9a6fc6e04574?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "/img/3.png",
     year: 2024,
     client: "Studio Halcyon",
     projectType: "Web Design",
@@ -60,4 +60,5 @@ export const projects: Project[] = [
     result:
       "Three inbound client enquiries within the first two weeks of launch. Shortlisted for the 2024 Dezeen Awards emerging studio category. Fully booked for Q1 of their first trading year.",
   },
+  
 ];

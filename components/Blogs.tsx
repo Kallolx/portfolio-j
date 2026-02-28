@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import StripeBadge from "./StripeBadge";
 import Image from "next/image";
+import Link from "next/link";
 
 import { blogPosts } from "@/data/blogs";
 
@@ -18,18 +19,20 @@ export default function Blogs({
   const displayedPosts = limit ? blogPosts.slice(0, limit) : blogPosts;
 
   return (
-    <section className={`px-6 lg:px-8 ${isFullPage ? "py-0" : "py-8"}`}>
+    <section className={`px-3 md:px-6 lg:px-8 ${isFullPage ? "py-0" : "py-8"}`}>
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className={isFullPage ? "" : "bg-white rounded-3xl p-12 lg:p-16"}
+          className={
+            isFullPage ? "" : "bg-white rounded-3xl p-4 md:p-12 lg:p-16"
+          }
         >
           {/* Header similar to CaseStudies */}
           {showHeader && (
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 p-8 mb-4">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 p-2 lg:p-8 mb-10 md:mb-4 lg:gap-12 mt-4 md:mt-0">
               <div className="flex items-start gap-3">
                 <StripeBadge
                   color="#002fb1"
@@ -56,43 +59,49 @@ export default function Blogs({
 
           {/* Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-6">
-            {displayedPosts.map((post) => (
-              <motion.article
+            {displayedPosts.map((post, index) => (
+              <Link
+                href={`/blog/${post.id}`}
                 key={post.id}
-                initial={{ scale: 0.9, opacity: 0, y: 20 }}
-                whileInView={{ scale: 1, opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{
-                  duration: 1,
-                  ease: [0.16, 1, 0.3, 1],
-                }}
-                className="group relative rounded-2xl overflow-hidden"
+                className="group block"
               >
-                <div className="relative rounded-2xl overflow-hidden">
-                  <Image
-                    src={post.image}
-                    alt={post.title}
-                    width={720}
-                    height={480}
-                    className="w-full h-[480px] object-cover rounded-2xl transition duration-300 group-hover:blur-[1px] group-hover:scale-105"
-                  />
+                <motion.article
+                  initial={{ opacity: 0, y: 80 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{
+                    duration: 0.8,
+                    delay: index * 0.2, // staggered delay based on index
+                    ease: [0.25, 1, 0.5, 1], // velvety smooth decelerating spring curve
+                  }}
+                  className="relative rounded-2xl overflow-hidden"
+                >
+                  <div className="relative rounded-2xl overflow-hidden">
+                    <Image
+                      src={post.image}
+                      alt={post.title}
+                      width={720}
+                      height={480}
+                      className="w-full h-[280px] sm:h-[320px] md:h-[480px] object-cover rounded-2xl transition duration-300 group-hover:blur-[1px] group-hover:scale-105"
+                    />
 
-                  {/* overlay button center */}
-                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                    <button
-                      aria-hidden
-                      className="color-cycle pointer-events-auto text-md font-mono rounded-full opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all duration-200 z-20"
-                    >
-                      View Details
-                    </button>
+                    {/* overlay button center */}
+                    <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                      <span
+                        aria-hidden
+                        className="color-cycle pointer-events-auto text-md font-mono rounded-full opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all duration-200 z-20"
+                      >
+                        View Details
+                      </span>
+                    </div>
                   </div>
-                </div>
 
-                {/* Title row */}
-                <h3 className="mt-4 font-serif text-3xl text-primary transition-colors duration-300 group-hover:text-orange-500">
-                  {post.title}
-                </h3>
-              </motion.article>
+                  {/* Title row */}
+                  <h3 className="mt-4 font-serif text-3xl text-primary transition-colors duration-300 group-hover:text-[#0046FF]">
+                    {post.title}
+                  </h3>
+                </motion.article>
+              </Link>
             ))}
           </div>
         </motion.div>

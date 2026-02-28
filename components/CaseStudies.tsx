@@ -8,30 +8,29 @@ import { projects } from "@/data/projects";
 
 export default function CaseStudies() {
   const container = useRef<HTMLDivElement>(null);
-  
+
   const { scrollYProgress } = useScroll({
     target: container,
     offset: ["start start", "end end"],
   });
 
-  const displayProjects = projects.slice(0, 3);
+  const displayProjects = projects;
 
   return (
-    <section className="px-6 lg:px-8 py-8">
+    <section className="px-3 md:px-6 lg:px-8 py-8">
       <div className="max-w-6xl mx-auto">
         {/* White Background Container */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="bg-white rounded-3xl p-12 lg:p-16"
+          className="bg-white rounded-3xl p-3 md:p-6 lg:p-16"
         >
           {/* Header Section */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 p-8 mb-4">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 p-2 lg:p-8 mb-10 md:mb-4 lg:gap-12 mt-4 md:mt-0">
             {/* Left Side - Title with Badge */}
             <div className="flex items-start gap-3">
-              <StripeBadge 
+              <StripeBadge
                 color="#002fb1"
                 opacity={1}
                 gap={2.5}
@@ -56,11 +55,12 @@ export default function CaseStudies() {
           </div>
 
           {/* Project Cards with Scroll Animation */}
-          <div ref={container} className="relative">
+          <div ref={container} className="relative mt-18 lg:mt-0">
             {displayProjects.map((project, index) => {
-              const targetScale = 1 - (displayProjects.length - index - 1) * 0.05;
+              const targetScale =
+                1 - (displayProjects.length - index - 1) * 0.05;
               return (
-                <CaseStudyCard 
+                <CaseStudyCard
                   key={project.id}
                   project={project}
                   index={index}

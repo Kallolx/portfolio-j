@@ -20,10 +20,10 @@ export default function BlogPage() {
 
   return (
     <>
-      <div className="max-w-5xl mx-auto px-6 pt-48 pb-24">
-        <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_2fr] gap-12 lg:gap-24 items-start">
+      <div className="max-w-5xl mx-auto px-3 md:px-6 pt-32 md:pt-48 pb-12 md:pb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_2fr] gap-8 md:gap-12 lg:gap-24 items-start">
           {/* Left Side: Heading */}
-          <h1 className="text-7xl font-serif text-primary tracking-tighter leading-none transition-all">
+          <h1 className="text-5xl md:text-7xl font-serif text-primary tracking-tighter leading-none transition-all">
             Blog & Insights
           </h1>
 

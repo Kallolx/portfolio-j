@@ -44,43 +44,50 @@ export default function ProjectCard() {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.35, ease: "easeInOut" }}
         >
-          {/* ── Left – Text content ───────────────────────────── */}
-          <div className="relative flex flex-col justify-between w-2/3 h-full p-7 z-10">
+          {/* ── Text content ───────────────────────────── */}
+          <div className="relative flex flex-col justify-between w-[55%] md:w-[60%] h-full p-4 md:p-8 z-10 pr-2 md:pr-8">
             {/* Title lines */}
-            <div className="flex-1 flex items-center">
+            <div className="flex-1 flex items-start md:items-center">
               <div className="overflow-hidden">
-                {project.title.split(" ").reduce<string[][]>((groups, word, i) => {
-                  const lineIdx = Math.floor(i / 3);
-                  if (!groups[lineIdx]) groups[lineIdx] = [];
-                  groups[lineIdx].push(word);
-                  return groups;
-                }, []).map((lineWords, lineIdx) => (
-                  <div key={lineIdx} className="overflow-hidden">
-                    <motion.p
-                      initial={{ y: 14, opacity: 0 }}
-                      animate={{ y: 0, opacity: 1 }}
-                      exit={{ y: -8, opacity: 0 }}
-                      transition={{
-                        duration: 0.5,
-                        delay: lineIdx * 0.07,
-                        ease: [0.25, 0.1, 0.25, 1],
-                      }}
-                      className="font-serif text-[var(--primary)] text-2xl leading-[1.3] tracking-tight"
-                    >
-                      {lineWords.join(" ")}
-                    </motion.p>
-                  </div>
-                ))}
+                {project.title
+                  .split(" ")
+                  .reduce<string[][]>((groups, word, i) => {
+                    const lineIdx = Math.floor(i / 3);
+                    if (!groups[lineIdx]) groups[lineIdx] = [];
+                    groups[lineIdx].push(word);
+                    return groups;
+                  }, [])
+                  .map((lineWords, lineIdx) => (
+                    <div key={lineIdx} className="overflow-hidden">
+                      <motion.p
+                        initial={{ y: 14, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        exit={{ y: -8, opacity: 0 }}
+                        transition={{
+                          duration: 0.5,
+                          delay: lineIdx * 0.07,
+                          ease: [0.25, 0.1, 0.25, 1],
+                        }}
+                        className="font-serif text-[var(--primary)] text-xl md:text-2xl leading-[1.3] tracking-tight"
+                      >
+                        {lineWords.join(" ")}
+                      </motion.p>
+                    </div>
+                  ))}
               </div>
             </div>
 
             {/* SEE PROJECT button */}
-            <div className="overflow-hidden">
+            <div className="overflow-hidden mb-1 md:mb-0">
               <motion.div
                 initial={{ y: 14, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: -8, opacity: 0 }}
-                transition={{ duration: 0.5, delay: 0.28, ease: [0.25, 0.1, 0.25, 1] }}
+                transition={{
+                  duration: 0.5,
+                  delay: 0.28,
+                  ease: [0.25, 0.1, 0.25, 1],
+                }}
                 className="flex items-center gap-2 group cursor-pointer"
               >
                 <span className="font-mono text-sm uppercase tracking-tighter text-[var(--primary)]">
@@ -112,7 +119,10 @@ export default function ProjectCard() {
                   key={i}
                   onClick={() => setIndex(i)}
                   className="relative h-0.5 overflow-hidden rounded-full cursor-pointer"
-                  style={{ width: i === index ? 20 : 8, transition: "width 0.3s ease" }}
+                  style={{
+                    width: i === index ? 20 : 8,
+                    transition: "width 0.3s ease",
+                  }}
                   aria-label={`Go to project ${i + 1}`}
                 >
                   <span className="absolute inset-0 bg-[var(--primary)]/20 rounded-full" />
@@ -127,14 +137,14 @@ export default function ProjectCard() {
             </div>
           </div>
 
-          {/* ── Right – Image ──────────────────────────────────── */}
-          <div className="relative w-1/2 h-full flex items-center justify-center overflow-hidden -ml-18">
+          {/* ── Image ──────────────────────────────────── */}
+          <div className="relative w-[50%] md:w-[45%] h-full flex items-center justify-center overflow-hidden -ml-5 md:-ml-8 py-4 pr-4 md:py-0 md:pr-0">
             <motion.div
               initial={{ x: 48, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               exit={{ x: 24, opacity: 0 }}
               transition={{ duration: 0.65, ease: [0.25, 0.1, 0.25, 1] }}
-              className="relative w-[78%] h-[45%] rounded-xl overflow-hidden"
+              className="relative w-full md:w-[85%] h-full md:h-[45%] rounded-xl overflow-hidden shadow-[0_0_15px_rgba(0,0,0,0.3)] md:shadow-none"
             >
               <Image
                 src={project.image}

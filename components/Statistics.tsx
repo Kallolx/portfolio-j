@@ -15,17 +15,17 @@ const stats = [
 
 export default function Statistics() {
   const container = useRef<HTMLDivElement>(null);
-  
+
   const { scrollYProgress } = useScroll({
     target: container,
     offset: ["start start", "end end"],
   });
 
   return (
-    <section className="px-6 lg:px-8 py-8">
+    <section className="px-3 md:px-6 lg:px-8 py-8">
       <div className="max-w-6xl mx-auto">
-        <div className="p-12 lg:p-16">
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-16 items-start">
+        <div className="p-4 md:p-12 lg:p-16">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-10 lg:gap-16 items-start">
             {/* Left Side - Badge and Description */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -36,7 +36,7 @@ export default function Statistics() {
             >
               {/* Badge and Title */}
               <div className="flex items-start gap-3">
-                <StripeBadge 
+                <StripeBadge
                   color="#0046FF"
                   opacity={1}
                   gap={2.5}
@@ -50,7 +50,9 @@ export default function Statistics() {
 
               {/* Description */}
               <p className="text-[#0046FF] font-mono text-base leading-relaxed max-w-[30ch]">
-                I measure each project not just by numbers, but by the impact it creates, the brands it strengthens, and the experiences it shapes.
+                I measure each project not just by numbers, but by the impact it
+                creates, the brands it strengthens, and the experiences it
+                shapes.
               </p>
             </motion.div>
 
