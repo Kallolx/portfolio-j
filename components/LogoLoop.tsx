@@ -1,18 +1,20 @@
 "use client";
 
 import React, { useId } from "react";
+import * as SI from "react-icons/si";
 
 interface LogoItem {
+  id?: string;
+  title?: string;
+  href?: string;
   node?: React.ReactNode;
   src?: string;
   alt?: string;
-  title?: string;
-  href?: string;
 }
 
 interface LogoLoopProps {
   logos: LogoItem[];
-  speed?: number; // seconds for one full pass
+  speed?: number;
   direction?: "left" | "right";
   logoHeight?: number;
   gap?: number;
@@ -20,6 +22,42 @@ interface LogoLoopProps {
   scaleOnHover?: boolean;
   fadeOut?: boolean;
   ariaLabel?: string;
+}
+
+function IconForTool({ id }: { id: string }) {
+  const nameMap: Record<string, string> = {
+    nextjs: "SiNextdotjs",
+    react: "SiReact",
+    typescript: "SiTypescript",
+    tailwind: "SiTailwindcss",
+    framer: "SiFramer",
+    figma: "SiFigma",
+    notion: "SiNotion",
+    adobe: "SiAdobe",
+    sketch: "SiSketch",
+    webflow: "SiWebflow",
+    linear: "SiLinear",
+    lottie: "SiLottiefiles",
+    photoshop: "SiAdobephotoshop",
+    illustrator: "SiAdobeillustrator",
+    aftereffects: "SiAdobeaftereffects",
+    ahrefs: "SiAhrefs",
+    screamingfrog: "SiScreamingfrogseo",
+    lighthouse: "SiLighthouse",
+    searchconsole: "SiSearchconsole",
+    googleanalytics: "SiGoogleanalytics",
+    node: "SiNodedotjs",
+    postgresql: "SiPostgresql",
+    mongodb: "SiMongodb",
+    docker: "SiDocker",
+    github: "SiGithub",
+    wordpress: "SiWordpress",
+  };
+
+  const compName = nameMap[id.toLowerCase()];
+  const Comp = compName && (SI as any)[compName];
+  if (Comp) return <Comp className="w-5 h-5 md:w-6 md:h-6" />;
+  return null;
 }
 
 export default function LogoLoop({
@@ -38,13 +76,13 @@ export default function LogoLoop({
 
   React.useEffect(() => {
     const handleResize = () => {
-      setCurrentGap(window.innerWidth < 768 ? Math.min(gap, 24) : gap);
+      setCurrentGap(window.innerWidth < 768 ? Math.min(gap, 32) : gap);
     };
-    handleResize(); // Init
+    handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, [gap]);
-  // Render 4 copies so there's always content filling the screen
+
   const items = [...logos, ...logos, ...logos, ...logos];
 
   const maskStyle: React.CSSProperties = fadeOut
@@ -57,49 +95,26 @@ export default function LogoLoop({
     : {};
 
   const renderItem = (logo: LogoItem, i: number) => {
-    const inner = logo.node ? (
-      <span
-        className="flex items-center justify-center"
-        style={{ height: logoHeight, fontSize: logoHeight }}
-      >
-        {logo.node}
-      </span>
-    ) : logo.src ? (
-      <img
-        src={logo.src}
-        alt={logo.alt ?? logo.title ?? ""}
-        style={{ height: logoHeight, width: "auto", objectFit: "contain" }}
-      />
-    ) : (
-      <svg
-        width="84"
-        height={logoHeight}
-        viewBox={`0 0 84 ${logoHeight}`}
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <rect
-          width="84"
-          height={logoHeight}
-          rx="6"
-          fill="#0046FF"
-          opacity="0.15"
-        />
-        <text
-          x="50%"
-          y="50%"
-          fill="#0046FF"
-          fontFamily="monospace"
-          fontSize="11"
-          textAnchor="middle"
-          dominantBaseline="middle"
-        >
-          {logo.title ?? "LOGO"}
-        </text>
-      </svg>
+    const inner = (
+      <div className="flex items-center gap-3 px-4 py-2 bg-primary/5 border border-primary/10 rounded-xl whitespace-nowrap text-primary">
+        {logo.id && <IconForTool id={logo.id} />}
+        {!logo.id && logo.src && (
+          <img
+            src={logo.src}
+            alt={logo.alt ?? logo.title ?? ""}
+            className="w-auto"
+            style={{ height: logoHeight * 0.7 }}
+          />
+        )}
+        <span className="font-mono font-medium text-sm md:text-base tracking-tight uppercase">
+          {logo.title}
+        </span>
+      </div>
     );
 
-    const cls = `flex-shrink-0${scaleOnHover ? " hover:scale-110 transition-transform duration-200" : ""}`;
+    const cls = `flex-shrink-0 transition-all duration-300 ${
+      scaleOnHover ? "hover:scale-110 hover:bg-primary/[0.08]" : ""
+    }`;
 
     return logo.href ? (
       <a
@@ -121,12 +136,12 @@ export default function LogoLoop({
 
   return (
     <div
-      className="relative w-full overflow-hidden"
-      style={{ height: logoHeight + 16, ...maskStyle }}
+      className="relative w-full overflow-hidden py-4"
+      style={{ ...maskStyle }}
       aria-label={ariaLabel}
     >
       <div
-        className={`logoloop-track-${uid}`}
+        className={`logoloop-track-${uid} py-2`}
         style={{
           display: "flex",
           alignItems: "center",

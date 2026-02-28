@@ -7,20 +7,28 @@ import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
 import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 import { useEffect } from "react";
+import Image from "next/image";
 
 const clientLogos = [
-  { title: "Figma" },
-  { title: "Framer" },
-  { title: "Sketch" },
-  { title: "Adobe XD" },
-  { title: "Notion" },
-  { title: "Webflow" },
-  { title: "Lottie" },
-  { title: "Linear" },
+  { id: "nextjs", title: "Next.js" },
+  { id: "react", title: "React" },
+  { id: "node", title: "Node.js" },
+  { id: "ahrefs", title: "Ahrefs" },
+  { id: "screamingfrog", title: "Screaming Frog" },
+  { id: "lighthouse", title: "Lighthouse" },
+  { id: "searchconsole", title: "Search Console" },
+  { id: "googleanalytics", title: "Analytics" },
+  { id: "tailwind", title: "Tailwind" },
+  { id: "typescript", title: "TypeScript" },
+  { id: "postgresql", title: "PostgreSQL" },
+  { id: "mongodb", title: "MongoDB" },
+  { id: "docker", title: "Docker" },
+  { id: "github", title: "GitHub" },
+  { id: "wordpress", title: "WordPress" },
 ];
 
 export default function About() {
-  const headingText = "Who I am & my vision";
+  const headingText = "Who am i & my vision";
   const count = useMotionValue(0);
   const rounded = useTransform(count, (latest) => Math.round(latest));
   const displayText = useTransform(rounded, (latest) =>
@@ -33,7 +41,7 @@ export default function About() {
       duration: 1.5,
       ease: "linear",
       repeat: Infinity,
-      repeatType: "reverse", // Types forward, then backspaces backward
+      repeatType: "reverse",
       repeatDelay: 1.5,
     });
     return controls.stop;
@@ -52,15 +60,20 @@ export default function About() {
           <div className="relative">
             <div className="flex flex-col gap-8 max-w-lg relative z-10">
               {/* Visual Photo Box - currently solid primary color as requested */}
-              <div className="w-28 h-34 bg-primary rounded-2xl flex items-center justify-center overflow-hidden">
-                {/* This space is reserved for the photo later */}
+              <div className="w-28 h-34 bg-primary rounded-2xl flex items-center justify-center overflow-hidden relative">
+                <Image
+                  src="/img/profile.png"
+                  alt="Profile"
+                  fill
+                  className="object-cover"
+                />
               </div>
 
               {/* Description Text */}
               <p className="font-mono text-primary text-md leading-relaxed tracking-tight">
-                I believe design should be invisible until it needs to be seen.
-                My focus is creating experiences that feel intuitive, reduce
-                friction, and leave a lasting impression.
+                I believe that technical excellence is the foundation of digital
+                growth. My focus is building scalable web applications that are
+                engineered for maximum search visibility and user performance.
               </p>
             </div>
 
@@ -124,19 +137,25 @@ export default function About() {
                 />
               </motion.div>
 
-              <div className="w-80 aspect-[4/5] bg-white rounded-2xl flex items-center justify-center p-4"></div>
+              <div className="w-80 aspect-[4/5] bg-white rounded-2xl flex items-center justify-center p-4 relative overflow-hidden">
+                <Image
+                  src="/img/profile.png"
+                  alt="Profile"
+                  fill
+                  className="object-cover"
+                />
+              </div>
             </div>
 
             {/* Right: Text & Animated Divider */}
             <div className="space-y-6 md:space-y-10 flex flex-col items-center lg:items-start text-center lg:text-left">
               <p className="font-mono text-white text-base leading-relaxed opacity-90 max-w-2xl">
-                I am a designer driven by curiosity and craft. My work begins
-                with listening—uncovering the essence of each idea, brand, or
-                story. With every project, I strive to blend strategy with
-                aesthetics, shaping visuals that not only look compelling but
-                carry meaning. For me, design is not just about creating
-                something beautiful—it&apos;s about building connections that
-                last.
+                I am an SEO Specialist and Full-Stack Developer driven by data
+                and technical precision. I build high-performance web
+                applications that blend seamless functionality with advanced
+                search engine optimization. For me, a successful website is one
+                that not only works perfectly but is found by the right audience
+                at the right time.
               </p>
 
               <StripeBadge
@@ -148,12 +167,13 @@ export default function About() {
               />
 
               <p className="font-mono text-white text-base leading-relaxed opacity-90">
-                My vision is to design with intention, creating identities and
-                experiences that stand the test of time. I believe every brand
-                has a story waiting to be told, and design is the language that
-                gives it form. By weaving strategy, emotion, and artistry
-                together, I aim to craft work that resonates deeply, sparks
-                recognition, and leaves a lasting imprint.
+                My vision is to bridge the gap between technical development and
+                organic growth marketing. I believe every business deserves a
+                digital ecosystem that scales effortlessly and performs
+                exceptionally in search results. By integrating technical SEO
+                into the core architecture of web applications, I create
+                long-term value that drives consistent traffic and measurable
+                business outcomes.
               </p>
             </div>
           </div>
@@ -182,9 +202,9 @@ export default function About() {
             {/* Right Side - Description */}
             <div className="font-mono text-md leading-relaxed text-primary lg:col-span-2 -mt-2">
               <p>
-                I measure each project not just by numbers, but by the impact it
-                creates, the brands it strengthens, and the experiences it
-                shapes.
+                I measure success through core web vitals, organic rankings, and
+                technical performance metrics that translate into real business
+                growth.
               </p>
             </div>
           </div>
@@ -195,30 +215,30 @@ export default function About() {
               {/* Card 1 */}
               <div className="border border-primary/20 bg-background/50 rounded-2xl p-4 md:p-8 aspect-square flex flex-col justify-between hover:bg-white/50 transition-colors relative z-0">
                 <span className="font-serif text-3xl md:text-5xl text-primary tracking-tight">
-                  300+
+                  15k+
                 </span>
                 <span className="font-mono text-primary text-[10px] md:text-sm font-medium pr-2 md:pr-8">
-                  Design Concepts Explored
+                  Keywords Ranked in Top 3
                 </span>
               </div>
 
               {/* Card 2 */}
               <div className="border border-primary/20 bg-background/50 rounded-2xl p-4 md:p-8 aspect-square flex flex-col justify-between hover:bg-white/50 transition-colors relative z-0">
                 <span className="font-serif text-3xl md:text-5xl text-primary tracking-tight">
-                  50+
+                  100+
                 </span>
                 <span className="font-mono text-primary text-[10px] md:text-sm font-medium pr-2 md:pr-8">
-                  Brands Transformed
+                  Web Applications Deployed
                 </span>
               </div>
 
               {/* Card 4 */}
               <div className="border border-primary/20 bg-background/50 rounded-2xl p-4 md:p-8 aspect-square flex flex-col justify-between hover:bg-white/50 transition-colors relative z-0">
                 <span className="font-serif text-3xl md:text-5xl text-primary tracking-tight">
-                  95%
+                  98%
                 </span>
                 <span className="font-mono text-primary text-[10px] md:text-sm font-medium pr-2 md:pr-8">
-                  Client Satisfaction
+                  Lighthouse Performance Score
                 </span>
               </div>
 
@@ -228,7 +248,7 @@ export default function About() {
                   10+
                 </span>
                 <span className="font-mono text-primary text-[10px] md:text-sm font-medium pr-2 md:pr-8">
-                  Years of Experience
+                  Technical SEO Audits
                 </span>
               </div>
 
@@ -352,15 +372,16 @@ export default function About() {
                 className="w-24 h-1.5"
               />
               <h2 className="-mt-2 text-md font-mono font-medium tracking-tight text-[#0046FF] uppercase">
-                AWARDS
+                RECOGNITION
               </h2>
             </div>
 
             {/* Right Side - Description */}
             <div className="font-mono text-md leading-relaxed text-primary -mt-2">
               <p className="max-w-2xl">
-                Awards mark the recognition of design that blends strategy,
-                creativity, and meaning—celebrating work that truly connects.
+                Recognition reflects a commitment to technical excellence,
+                performance optimization, and the success of digital products in
+                a competitive search landscape.
               </p>
             </div>
           </div>
@@ -379,26 +400,18 @@ export default function About() {
               </span>
 
               <div className="flex flex-col gap-6">
-                {/* Pseudo-logo (like Logoipsum) */}
-                <div className="flex items-center gap-2 text-[#0046FF] font-bold text-sm tracking-tight">
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                  >
-                    <path d="M12 2L2 22h20L12 2zm0 4.5l6.5 13h-13L12 6.5z" />
-                  </svg>
-                  Logoipsum
+                <div className="flex items-center gap-2 text-[#0046FF] font-bold text-sm tracking-tight uppercase font-mono">
+                  Global Search Awards
                 </div>
 
                 <div className="flex flex-col gap-2">
                   <h3 className="font-serif text-[28px] text-primary tracking-tight">
-                    Best Branding Identity
+                    Best SEO Strategy (Retail)
                   </h3>
                   <p className="font-mono text-primary text-md leading-relaxed max-w-xl opacity-80">
-                    Recognized for crafting a luxury fragrance brand identity
-                    that blended storytelling with timeless aesthetics.
+                    Recognized for a comprehensive technical SEO overhaul that
+                    resulted in a 150% increase in organic revenue for an
+                    international e-commerce platform.
                   </p>
                 </div>
               </div>
@@ -416,26 +429,18 @@ export default function About() {
               </span>
 
               <div className="flex flex-col gap-6">
-                {/* Pseudo-logo (like Logoipsum) */}
-                <div className="flex items-center gap-2 text-[#0046FF] font-bold text-sm tracking-tight">
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                  >
-                    <path d="M12 2L2 22h20L12 2zm0 4.5l6.5 13h-13L12 6.5z" />
-                  </svg>
-                  Logoipsum
+                <div className="flex items-center gap-2 text-[#0046FF] font-bold text-sm tracking-tight uppercase font-mono">
+                  Upwork Engineering
                 </div>
 
                 <div className="flex flex-col gap-2">
                   <h3 className="font-serif text-[28px] text-primary tracking-tight">
-                    UI/UX Excellence Award
+                    Full-Stack Technical Excellence
                   </h3>
                   <p className="font-mono text-primary text-md leading-relaxed max-w-xl opacity-80">
-                    Honoured for an intuitive and visually striking SaaS
-                    platform interface.
+                    Honoured for the architecture and deployment of a high-load
+                    SaaS application with 99.9% uptime and perfect Lighthouse
+                    scores.
                   </p>
                 </div>
               </div>
@@ -453,25 +458,18 @@ export default function About() {
               </span>
 
               <div className="flex flex-col gap-6">
-                <div className="flex items-center gap-2 text-[#0046FF] font-bold text-sm tracking-tight">
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                  >
-                    <path d="M12 2L2 22h20L12 2zm0 4.5l6.5 13h-13L12 6.5z" />
-                  </svg>
-                  Logoipsum
+                <div className="flex items-center gap-2 text-[#0046FF] font-bold text-sm tracking-tight uppercase font-mono">
+                  Google Developers
                 </div>
 
                 <div className="flex flex-col gap-2">
                   <h3 className="font-serif text-[28px] text-primary tracking-tight">
-                    Featured Project
+                    Core Web Vitals Specialist
                   </h3>
                   <p className="font-mono text-primary text-md leading-relaxed max-w-xl opacity-80">
-                    Selected for a real estate branding system that combined
-                    clarity with elegance.
+                    Awarded for performance optimization across a network of 50+
+                    high-traffic publishers, achieving straight-line green
+                    vitals.
                   </p>
                 </div>
               </div>
@@ -489,25 +487,18 @@ export default function About() {
               </span>
 
               <div className="flex flex-col gap-6">
-                <div className="flex items-center gap-2 text-[#0046FF] font-bold text-sm tracking-tight">
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                  >
-                    <path d="M12 2L2 22h20L12 2zm0 4.5l6.5 13h-13L12 6.5z" />
-                  </svg>
-                  Logoipsum
+                <div className="flex items-center gap-2 text-[#0046FF] font-bold text-sm tracking-tight uppercase font-mono">
+                  Technical SEO Summit
                 </div>
 
                 <div className="flex flex-col gap-2">
                   <h3 className="font-serif text-[28px] text-primary tracking-tight">
-                    Visual Storytelling Recognition
+                    Innovative Web Architecture
                   </h3>
                   <p className="font-mono text-primary text-md leading-relaxed max-w-xl opacity-80">
-                    Highlighted for a food delivery app design that balanced
-                    usability with engaging visuals.
+                    Recognized for pioneering a headless CMS architecture that
+                    balanced complex data relationships with extreme client-side
+                    speed.
                   </p>
                 </div>
               </div>
@@ -525,25 +516,17 @@ export default function About() {
               </span>
 
               <div className="flex flex-col gap-6">
-                <div className="flex items-center gap-2 text-[#0046FF] font-bold text-sm tracking-tight">
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                  >
-                    <path d="M12 2L2 22h20L12 2zm0 4.5l6.5 13h-13L12 6.5z" />
-                  </svg>
-                  Logoipsum
+                <div className="flex items-center gap-2 text-[#0046FF] font-bold text-sm tracking-tight uppercase font-mono">
+                  Freelancer Innovation
                 </div>
 
                 <div className="flex flex-col gap-2">
                   <h3 className="font-serif text-[28px] text-primary tracking-tight">
-                    Best Emerging Designer
+                    Best Emerging Technical Lead
                   </h3>
                   <p className="font-mono text-primary text-md leading-relaxed max-w-xl opacity-80">
-                    Awarded for consistent innovation in identity and digital
-                    design.
+                    Selected for consistent delivery of scalable digital
+                    foundations for rapidly growing startups.
                   </p>
                 </div>
               </div>

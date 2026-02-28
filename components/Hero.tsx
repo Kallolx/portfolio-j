@@ -45,20 +45,20 @@ export default function Hero() {
                 className="object-cover"
               />
             </div>
-            <h1 className="text-3xl md:text-4xl tracking-tight font-serif leading-[1.4] text-left relative z-10 text-[var(--primary)] flex flex-wrap">
-              {headline.split("").map((char, index) => (
+            <h1 className="text-3xl md:text-4xl tracking-tight font-serif leading-[1.4] text-left relative z-10 text-[var(--primary)] pb-1">
+              {headline.split(" ").map((word, index) => (
                 <motion.span
                   key={index}
-                  initial={{ opacity: 0, y: 5 }}
+                  initial={{ opacity: 0, y: 15 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{
-                    duration: 0.25,
-                    delay: index * 0.015,
-                    ease: [0.215, 0.61, 0.355, 1],
+                    duration: 0.4,
+                    delay: index * 0.05,
+                    ease: "easeOut",
                   }}
-                  className={char === " " ? "mr-[0.25em]" : ""}
+                  className="inline-block mr-[0.25em]"
                 >
-                  {char}
+                  {word}
                 </motion.span>
               ))}
             </h1>
@@ -79,15 +79,22 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
-                className="w-32 h-32 md:w-38 md:h-40 bg-white rounded-lg mt-4 md:mt-8"
-              ></motion.div>
+                className="w-56 h-64 md:w-38 md:h-40 bg-white rounded-lg mt-6 md:mt-8 relative overflow-hidden"
+              >
+                <Image
+                  src="/img/profile.png"
+                  alt="Profile"
+                  fill
+                  className="object-cover"
+                />
+              </motion.div>
               <motion.h2
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.4, ease: "easeOut" }}
                 className="text-4xl md:text-6xl tracking-tight font-serif text-white mt-2 md:mt-4 text-center"
               >
-                James Parker
+                Jamil Ifat
               </motion.h2>
             </div>
           </div>

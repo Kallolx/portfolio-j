@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import ContactSection from "@/components/Contact";
+import Image from "next/image";
 
 export default function ContactPage() {
   return (
@@ -17,8 +18,13 @@ export default function ContactPage() {
           <div className="relative">
             <div className="flex flex-col gap-8 max-w-lg relative z-10">
               {/* Solid Contact Image Box */}
-              <div className="shrink-0 w-28 h-34 rounded-2xl bg-primary flex items-center justify-center text-white font-mono text-xl">
-                JP
+              <div className="shrink-0 w-28 h-34 rounded-2xl bg-primary relative overflow-hidden">
+                <Image
+                  src="/img/profile.png"
+                  alt="Profile"
+                  fill
+                  className="object-cover"
+                />
               </div>
 
               {/* Description Text */}

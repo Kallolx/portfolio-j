@@ -7,18 +7,25 @@ import StripePattern from "./StripePattern";
 import LogoLoop from "./LogoLoop";
 
 const clientLogos = [
-  { title: "Figma" },
-  { title: "Framer" },
-  { title: "Sketch" },
-  { title: "Adobe XD" },
-  { title: "Notion" },
-  { title: "Webflow" },
-  { title: "Lottie" },
-  { title: "Linear" },
+  { id: "nextjs", title: "Next.js" },
+  { id: "react", title: "React" },
+  { id: "node", title: "Node.js" },
+  { id: "ahrefs", title: "Ahrefs" },
+  { id: "screamingfrog", title: "Screaming Frog" },
+  { id: "lighthouse", title: "Lighthouse" },
+  { id: "searchconsole", title: "Search Console" },
+  { id: "googleanalytics", title: "Analytics" },
+  { id: "tailwind", title: "Tailwind" },
+  { id: "typescript", title: "TypeScript" },
+  { id: "postgresql", title: "PostgreSQL" },
+  { id: "mongodb", title: "MongoDB" },
+  { id: "docker", title: "Docker" },
+  { id: "github", title: "GitHub" },
+  { id: "wordpress", title: "WordPress" },
 ];
 
 const aboutText =
-  "I specialize in UI/UX design, web and mobile interfaces, and brand identity. I transform complex ideas into intuitive, visually striking designs using tools like Figma, Sketch, and Framer. Driven by research, clarity, and attention to detail, I create interfaces that don’t just look good-they work seamlessly.";
+  "I specialize in building high-performance web applications and implementing advanced SEO strategies that drive organic growth. I transform complex business requirements into scalable, search-optimized digital solutions using modern technologies like Next.js, React, and Node.js. Driven by data, technical precision, and a focus on ROI, I develop websites that don’t just function perfectly—they dominate the search results.";
 
 export default function About() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -63,13 +70,13 @@ export default function About() {
               {/* Text List */}
               <div className="space-y-2 pl-2">
                 <p className="text-primary text-base font-mono">
-                  Ethical & integrity-driven
+                  SEO & Search Performance
                 </p>
                 <p className="text-primary text-base font-mono">
-                  Strategic problem-solving
+                  Scalable Web Architecture
                 </p>
                 <p className="text-primary text-base font-mono">
-                  Critical thinking
+                  Data-Driven Development
                 </p>
               </div>
 

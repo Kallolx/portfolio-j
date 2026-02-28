@@ -6,11 +6,11 @@ import StripeBadge from "./StripeBadge";
 import StatCard from "./StatCard";
 
 const stats = [
-  { number: "120+", label: "Projects Completed" },
-  { number: "10+", label: "Years of Experience" },
-  { number: "95%", label: "Client Satisfaction" },
-  { number: "50+", label: "Brands Transformed" },
-  { number: "300+", label: "Design Concepts Explored" },
+  { number: "15k+", label: "Keywords Ranked in Top 3" },
+  { number: "100+", label: "Web Applications Deployed" },
+  { number: "98%", label: "Lighthouse Performance Score" },
+  { number: "500+", label: "Technical SEO Audits" },
+  { number: "10+", label: "Years of Technical Experience" },
 ];
 
 export default function Statistics() {
@@ -50,9 +50,9 @@ export default function Statistics() {
 
               {/* Description */}
               <p className="text-[#0046FF] font-mono text-base leading-relaxed max-w-[30ch]">
-                I measure each project not just by numbers, but by the impact it
-                creates, the brands it strengthens, and the experiences it
-                shapes.
+                I measure success through core web vitals, organic rankings, and
+                technical performance metrics that translate into real business
+                growth.
               </p>
             </motion.div>
 

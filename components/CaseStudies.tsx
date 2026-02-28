@@ -42,14 +42,12 @@ export default function CaseStudies() {
               </h2>
             </div>
 
-            {/* Right Side - Description */}
             <div className="font-mono text-md leading-relaxed text-primary lg:col-span-2 -mt-2">
               <p>
-                I start each project by uncovering its story—listening,
-                researching, and exploring the details that give it meaning.
-                Then I craft an aesthetic process where strategy shapes
-                structure and design brings the story to life, creating
-                experiences that connect and endure.
+                I measure success through technical analysis, organic search
+                performance, and measurable data-driven outcomes. Each case
+                study represents a commitment to technical excellence and
+                professional growth.
               </p>
             </div>
           </div>

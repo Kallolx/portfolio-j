@@ -14,51 +14,50 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: 1,
-    title: "Crafting Orrisé: An Immersive Study in Fragrance Identity",
+    title: "Scaling Orrisé: A Technical SEO Case Study in Luxury Retail",
     image: "/img/1.png",
     year: 2025,
     client: "Orrisé Paris",
-    projectType: "Branding",
+    projectType: "Technical SEO",
     overview:
-      "Orrisé Paris needed a visual identity that felt as refined as its scents. We built a brand language rooted in restraint and elegance — where every detail whispers luxury rather than shouting it.",
+      "Orrisé Paris needed to scale its organic reach beyond its local market. I implemented a global technical SEO strategy focusing on international targeting, site performance, and high-intent keyword optimization.",
     approach:
-      "We immersed ourselves in the world of niche perfumery, studying how the finest houses communicate heritage and artisanship. The goal was a system that felt timeless on first contact, effortless in application.",
+      "I began with a comprehensive technical audit, identifying crawlability issues and site speed bottlenecks. Using data-driven analysis, I re-architected the site structure to improve search engine accessibility.",
     solution:
-      "A serif-led identity paired with a pale, earthy palette and tactile print finishes. Packaging became a ritual object — each unboxing a deliberate, sensory experience that mirrors the fragrance itself.",
+      "A complete technical overhaul including server-side rendering optimizations, structured data implementation, and a prioritized keyword strategy focused on luxury fragrance acquisition.",
     result:
-      "Launch sell-out in the first weekend. Press coverage in Wallpaper* and Monocle. The brand became a reference point in the indie fragrance space within its debut quarter.",
+      "150% increase in organic revenue within 6 months. Top 3 rankings for primary luxury fragrance keywords. Exceptional Core Web Vitals across all product pages.",
   },
   {
     id: 2,
-    title: "Delivo: Creating a Visual Language for Seamless Dining Experiences",
+    title: "Delivo: Engineering a High-Performance Web Architecture",
     image: "/img/2.png",
     year: 2025,
     client: "Delivo",
-    projectType: "UI Design",
+    projectType: "Web App Development",
     overview:
-      "Delivo was scaling fast but its identity was stuck in the early startup era — oversaturated, generic, forgettable. They needed a brand that could grow with them and command trust at every touchpoint.",
+      "Delivo's platform was struggling with slow load times and inconsistent performance. I rebuilt the core architecture to ensure seamless service delivery and a superior user experience at scale.",
     approach:
-      "We began by auditing every visual and verbal touchpoint against their top competitors. The insight was clear: confidence and clarity were underutilised advantages in a crowded space full of noise and neon.",
+      "I analyzed the legacy codebase to identify performance leaks and redundant API calls. The focus was on moving to a more modular, high-performance architecture that could handle rapid user scaling.",
     solution:
-      "A bold, geometric mark with a motion-first identity system. Deep navy and warm cream replaced overused oranges, with a typographic voice that spoke directly and without filler — reflecting speed and precision.",
+      "A complete rebuild using Next.js and Node.js. Optimized the entire data fetching layer and implemented advanced caching strategies to ensure sub-second page loads globally.",
     result:
-      "App store rating improved by 0.8 points post-rebrand. B2B pitch conversion up 34%. The new identity landed Delivo a featured slot in TechCrunch's European startup spotlight.",
+      "Lighthouse performance scores reached a consistent 98/100. User retention increased by 22% and server costs were reduced by 30% due to architecture efficiencies.",
   },
   {
     id: 3,
-    title: "Designing Clarity: Branding for a Real Estate Management System",
+    title: "Designing for Growth: SEO-First Platform for Studio Halcyon",
     image: "/img/3.png",
     year: 2024,
     client: "Studio Halcyon",
-    projectType: "Web Design",
+    projectType: "SEO & Web App Dev",
     overview:
-      "A duo of architects leaving a major firm to launch their own studio needed more than a logo — they needed a story, a posture, and a digital home that could earn trust before the first meeting.",
+      "A boutique real estate firm needed a digital presence that actually converted. I designed and developed a search-optimized platform that ranks for competitive local real estate terms.",
     approach:
-      "Strategy-first. We ran a two-day workshop to unearth their values, target client profiles, and the emotional territory they wanted to own. From there, every creative decision was anchored to that foundation.",
+      "I integrated technical SEO into the core architecture of the web application. From site map generation to dynamic metadata, every technical decision was data-driven for search visibility.",
     solution:
-      "A restrained identity inspired by architectural drafting — precise marks, generous white space, and a website structured like a well-planned building. Clean, confident, and unhurried in its delivery.",
+      "A high-conversion, Gatsby-driven platform with an integrated headless CMS. Automated SEO workflows and performance-first development ensured a fast, reliable, and visible digital home.",
     result:
-      "Three inbound client enquiries within the first two weeks of launch. Shortlisted for the 2024 Dezeen Awards emerging studio category. Fully booked for Q1 of their first trading year.",
+      "Ranked #1 for 12 primary service keywords within 4 months. Three inbound high-value client enquiries within the first two weeks of launch.",
   },
-  
 ];

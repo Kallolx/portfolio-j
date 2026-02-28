@@ -54,8 +54,8 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <Link href="/" onClick={() => setIsOpen(false)}>
-              <motion.div className="font-serif font-medium text-2xl text-primary">
-                James Parker
+              <motion.div className="font-serif font-medium text-3xl text-primary">
+                Jamil Ifat
               </motion.div>
             </Link>
 
@@ -89,8 +89,8 @@ export default function Navbar() {
 
             {/* Email/CTA - Desktop */}
             <motion.a
-              href="mailto:hello@james.com"
-              aria-label="Email hello@james.com"
+              href="mailto:jamilaktarifat@hotmail.com"
+              aria-label="Email jamilaktarifat@hotmail.com"
               whileTap={{ scale: 0.95 }}
               className="hidden lg:block h-10 overflow-hidden border border-primary/20 rounded-full group px-4 relative"
             >
@@ -104,7 +104,7 @@ export default function Navbar() {
                   >
                     <path d="M1.5 6.75A2.25 2.25 0 013.75 4.5h16.5A2.25 2.25 0 0122.5 6.75v10.5a2.25 2.25 0 01-2.25 2.25H3.75A2.25 2.25 0 011.5 17.25V6.75zM3.75 6.75v.768l8.25 5.062 8.25-5.062V6.75H3.75z" />
                   </svg>
-                  <span className="font-mono text-md">hello@james.com</span>
+                  <span className="font-mono text-md">jamilaktarifat</span>
                 </div>
                 <div className="flex items-center gap-2 h-10 text-orange-500">
                   <svg
@@ -115,7 +115,7 @@ export default function Navbar() {
                   >
                     <path d="M1.5 6.75A2.25 2.25 0 013.75 4.5h16.5A2.25 2.25 0 0122.5 6.75v10.5a2.25 2.25 0 01-2.25 2.25H3.75A2.25 2.25 0 011.5 17.25V6.75zM3.75 6.75v.768l8.25 5.062 8.25-5.062V6.75H3.75z" />
                   </svg>
-                  <span className="font-mono text-md">hello@james.com</span>
+                  <span className="font-mono text-md">jamilaktarifat</span>
                 </div>
               </div>
             </motion.a>
@@ -220,10 +220,10 @@ export default function Navbar() {
                 get in touch
               </p>
               <a
-                href="mailto:hello@james.com"
-                className="font-serif text-2xl text-primary"
+                href="mailto:jamilaktarifat@hotmail.com"
+                className="font-serif text-2xl text-primary hover:text-orange-500 transition-colors duration-300"
               >
-                hello@james.com
+                jamilaktarifat@hotmail.com
               </a>
             </motion.div>
           </motion.div>

@@ -14,28 +14,28 @@ interface Testimonial {
 const testimonials: Testimonial[] = [
   {
     quote:
-      "Working with James was an outstanding experience. His attention to detail, creative insight, and ability to translate ideas into stunning designs exceeded all our expectations.",
+      "Jamil's technical SEO audit was a game-changer for us. Our organic traffic doubled in just three months, and we're now ranking for keywords we never thought possible.",
     name: "Michael Thompson",
-    role: "Marketing Director",
+    role: "Marketing Director, TechFlow",
     avatar: "https://i.pravatar.cc/80?img=11",
   },
   {
     quote:
-      "James delivered a brand identity that perfectly captured our vision. The process was smooth, collaborative, and the results speak for themselves — our clients noticed immediately.",
+      "The web application Jamil built is lightning fast and scales perfectly with our user growth. His attention to technical detail and clean architecture is world-class.",
     name: "Sarah Okonkwo",
-    role: "Founder, Bloom Studio",
+    role: "CTO, Bloom Systems",
     avatar: "https://i.pravatar.cc/80?img=47",
   },
   {
     quote:
-      "From wireframes to final handoff, James brought both craft and clarity to every screen. He has a rare ability to balance beauty with function.",
+      "Most developers ignore SEO, but Jamil builds it into the core. Our site has perfect Lighthouse scores and green Core Web Vitals across the board.",
     name: "David Lim",
-    role: "Head of Product, Arcline",
+    role: "Head of Growth, Arcline",
     avatar: "https://i.pravatar.cc/80?img=33",
   },
   {
     quote:
-      "One of the most thoughtful designers I've worked with. He asks the right questions, listens carefully, and delivers work that moves the needle.",
+      "A rare engineer who understands both deep technical architecture and search engine algorithms. He delivers work that truly moves the needle on ROI.",
     name: "Priya Nair",
     role: "CEO, Fieldstack",
     avatar: "https://i.pravatar.cc/80?img=5",

@@ -42,8 +42,8 @@ export const blogPosts: BlogPost[] = [
     ],
     author: {
       image: "/img/author.jpg", // Update with your actual author image path
-      name: "James Parker",
-      role: "Design Head @ James Creatives",
+      name: "Jamil Ifat",
+      role: "Design Head @ Jamil Creatives",
       quote:
         "A design's true strength isn't in how it starts, but in the connections it continues to create.",
     },
@@ -79,8 +79,8 @@ export const blogPosts: BlogPost[] = [
     ],
     author: {
       image: "/img/author.jpg",
-      name: "James Parker",
-      role: "Design Head @ James Creatives",
+      name: "Jamil Ifat",
+      role: "Design Head @ Jamil Creatives",
       quote: "Simplicity is the ultimate form of sophisticated communication.",
     },
     secondImage: "/img/b3.png",
@@ -108,8 +108,8 @@ export const blogPosts: BlogPost[] = [
     ],
     author: {
       image: "/img/author.jpg",
-      name: "James Parker",
-      role: "Design Head @ James Creatives",
+      name: "Jamil Ifat",
+      role: "Design Head @ Jamil Creatives",
       quote:
         "Design is not what you see, but what you feel when you navigate the invisible spaces.",
     },
@@ -137,8 +137,8 @@ export const blogPosts: BlogPost[] = [
     ],
     author: {
       image: "/img/author.jpg",
-      name: "James Parker",
-      role: "Design Head @ James Creatives",
+      name: "Jamil Ifat",
+      role: "Design Head @ Jamil Creatives",
       quote:
         "The interface should be an invisible bridge between intention and action.",
     },

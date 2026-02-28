@@ -60,9 +60,30 @@ export default function NotFoundPage() {
               initial={{ scale: 0.9 }}
               animate={{ scale: 1 }}
               transition={{ duration: 0.8, type: "spring" }}
-              className="text-[10rem] font-serif text-primary tracking-tighter leading-none"
+              className="text-[10rem] font-serif text-primary tracking-wider leading-none flex items-center justify-center"
             >
-              404
+              <span>4</span>
+              <span className="relative inline-flex items-center justify-center">
+                0
+                <motion.span
+                  initial={{ scale: 0 }}
+                  animate={{
+                    scale: 1,
+                    scaleY: [1, 1, 0.1, 1, 1],
+                  }}
+                  transition={{
+                    scale: { delay: 0.5, duration: 0.5 },
+                    scaleY: {
+                      repeat: Infinity,
+                      duration: 1.2,
+                      times: [0, 0.6, 0.8, 0.9, 1],
+                      repeatDelay: 1,
+                    },
+                  }}
+                  className="absolute w-3 h-3 bg-primary rounded-full mr-2 -mt-2"
+                />
+              </span>
+              <span>4</span>
             </motion.h1>
             <Link
               href="/"
@@ -93,6 +114,25 @@ export default function NotFoundPage() {
             className="col-span-2 h-40 border border-[#acc4ff]/60 rounded-2xl bg-[var(--background)] relative z-10 flex flex-col items-center justify-center p-4 text-center overflow-hidden"
           >
             <TextureOverlay />
+            <motion.div
+              animate={{
+                y: [0, -8, 0],
+                rotate: [0, -2, 2, 0],
+              }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+              className="relative w-24 h-24 z-10"
+            >
+              <Image
+                src="/img/404.png"
+                alt="404 Illustration"
+                fill
+                className="object-contain"
+              />
+            </motion.div>
           </motion.div>
 
           {/* Box 3 (Right) - Text OOPS */}

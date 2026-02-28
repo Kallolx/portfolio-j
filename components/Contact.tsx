@@ -1,7 +1,10 @@
 "use client";
 
-import { motion } from "framer-motion";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 import StripeBadge from "./StripeBadge";
+import { FiPhone, FiMail, FiCheckCircle, FiX } from "react-icons/fi";
 
 export default function Contact({
   showHeader = true,
@@ -12,6 +15,14 @@ export default function Contact({
   isFullPage?: boolean;
   isTransparent?: boolean;
 }) {
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitted(true);
+    e.currentTarget.reset();
+  };
+
   return (
     <section className="px-3 md:px-6 lg:px-8 py-8">
       <div className="max-w-6xl mx-auto">
@@ -46,8 +57,13 @@ export default function Contact({
               <div className="flex items-center gap-5">
                 {!isFullPage && (
                   <>
-                    <div className="shrink-0 w-28 h-36 rounded-xl bg-[var(--primary)] flex items-center justify-center text-white font-mono text-lg">
-                      JP
+                    <div className="shrink-0 w-28 h-36 rounded-xl bg-[var(--primary)] relative overflow-hidden">
+                      <Image
+                        src="/img/profile.png"
+                        alt="Profile"
+                        fill
+                        className="object-cover"
+                      />
                     </div>
                     <p className="text-primary font-mono text-base leading-relaxed max-w-[18ch]">
                       Reach out to start a conversation, share a vision, or
@@ -58,52 +74,46 @@ export default function Contact({
               </div>
 
               <div className="space-y-4">
-                <div className="flex items-center gap-3 text-primary font-mono">
-                  {/* Phone icon */}
-                  <svg
-                    width="18"
-                    height="18"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="#0046FF"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.8 10.8 19.79 19.79 0 01.73 2.18 2 2 0 012.72 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 7.69a16 16 0 006.4 6.4l1.06-1.06a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
-                  </svg>
-                  <span>+01-0000-2345</span>
-                </div>
+                <a
+                  href="tel:+0100002345"
+                  className="flex items-center gap-3 text-primary font-mono group hover:text-orange-500 transition-colors duration-300"
+                >
+                  <FiPhone
+                    size={18}
+                    strokeWidth={1.8}
+                    className="transition-all duration-300 group-hover:scale-110"
+                  />
+                  <span className="transition-colors duration-300">
+                    +01-0000-2345
+                  </span>
+                </a>
 
-                <div className="flex items-center gap-3 text-primary font-mono">
-                  {/* Email icon */}
-                  <svg
-                    width="18"
-                    height="18"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="#0046FF"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <rect x="2" y="4" width="20" height="16" rx="2" />
-                    <path d="M2 7l10 7 10-7" />
-                  </svg>
-                  <span>hello@james.com</span>
-                </div>
+                <a
+                  href="mailto:jamilaktarifat@hotmail.com"
+                  className="flex items-center gap-3 text-primary font-mono group hover:text-orange-500 transition-colors duration-300"
+                >
+                  <FiMail
+                    size={18}
+                    strokeWidth={1.8}
+                    className="transition-all duration-300 group-hover:scale-110"
+                  />
+                  <span className="transition-colors duration-300">
+                    jamilaktarifat@hotmail.com
+                  </span>
+                </a>
               </div>
             </div>
 
-            {/* Right column — contact form visual only */}
-            <div>
-              <form className="space-y-8">
+            {/* Right column — form always visible */}
+            <div className="relative min-h-[400px]">
+              <form onSubmit={handleSubmit} className="space-y-8">
                 <div>
                   <label className="block text-sm font-mono text-primary mb-2">
                     Name
                   </label>
                   <input
-                    className="w-full border-2 border-t-transparent border-l-transparent border-r-transparent border-b-primary/50 outline-none py-2 pl-4 font-mono focus:border-primary/50"
+                    required
+                    className="w-full border-2 border-t-transparent border-l-transparent border-r-transparent border-b-primary/50 outline-none py-2 pl-4 font-mono focus:border-primary/50 bg-transparent transition-colors"
                     placeholder="Jane Smith"
                   />
                 </div>
@@ -113,7 +123,9 @@ export default function Contact({
                     Email
                   </label>
                   <input
-                    className="w-full border-2 border-t-transparent border-l-transparent border-r-transparent border-b-primary/50 outline-none py-2 pl-4 font-mono focus:border-primary/50"
+                    required
+                    type="email"
+                    className="w-full border-2 border-t-transparent border-l-transparent border-r-transparent border-b-primary/50 outline-none py-2 pl-4 font-mono focus:border-primary/50 bg-transparent transition-colors"
                     placeholder="jane@framer.com"
                   />
                 </div>
@@ -123,21 +135,72 @@ export default function Contact({
                     Message
                   </label>
                   <textarea
+                    required
                     rows={5}
-                    className="w-full border-2 border-t-transparent border-l-transparent border-r-transparent border-b-primary/50 outline-none py-2 pl-4 font-mono focus:border-primary/50"
+                    className="w-full border-2 border-t-transparent border-l-transparent border-r-transparent border-b-primary/50 outline-none py-2 pl-4 font-mono focus:border-primary/50 bg-transparent transition-colors resize-none"
                     placeholder="Your Message"
                   />
                 </div>
 
                 <div>
                   <button
-                    type="button"
-                    className="px-6 py-2 rounded-full border border-primary text-primary font-mono"
+                    type="submit"
+                    className="px-8 py-3 rounded-full border-2 border-primary text-primary font-mono hover:bg-primary hover:text-white transition-all duration-300"
                   >
                     Submit
                   </button>
                 </div>
               </form>
+
+              {/* Success Modal */}
+              <AnimatePresence>
+                {isSubmitted && (
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    className="fixed inset-0 z-[100] flex items-center justify-center p-2 bg-background/40 backdrop-blur-md"
+                  >
+                    <motion.div
+                      initial={{ scale: 0.9, opacity: 0, y: 20 }}
+                      animate={{ scale: 1, opacity: 1, y: 0 }}
+                      exit={{ scale: 0.9, opacity: 0, y: 20 }}
+                      className="relative w-full max-w-[440px] bg-background border border-primary/20 p-6 md:p-8 rounded-3xl shadow-2xl"
+                    >
+                      <button
+                        onClick={() => setIsSubmitted(false)}
+                        className="absolute top-4 right-4 p-2 text-primary/30 hover:text-primary transition-colors hover:bg-primary/5 rounded-full z-20"
+                      >
+                        <FiX size={18} />
+                      </button>
+
+                      <div className="flex items-center gap-4 md:gap-5 pr-1">
+                        {/* Image box - Left side */}
+                        <div className="shrink-0 w-20 md:w-24 h-28 md:h-32 relative overflow-hidden">
+                          <Image
+                            src="/img/thanku.png"
+                            alt="Message Received"
+                            fill
+                            className="object-contain"
+                          />
+                        </div>
+
+                        {/* Texts - Right side */}
+                        <div className="space-y-1.5 translate-y-[-2px]">
+                          <h3 className="font-serif text-3xl md:text-4xl text-primary tracking-tight leading-[0.9]">
+                            Message received
+                          </h3>
+
+                          <p className="font-mono text-sm tracking-tight text-primary/60 leading-relaxed max-w-[32ch]">
+                            Thank you for reaching out. I&apos;ll be in touch
+                            with you as soon as possible.
+                          </p>
+                        </div>
+                      </div>
+                    </motion.div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
           </div>
         </motion.div>

@@ -15,32 +15,33 @@ interface Service {
 const services: Service[] = [
   {
     number: "00-1",
-    title: "Web Design",
+    title: "Technical SEO",
     description:
-      "Crafting engaging websites that blend style with seamless usability.",
+      "Implementing advanced search strategies to drive organic growth and dominate competitive rankings.",
     image:
       "https://images.unsplash.com/photo-1559028012-481c04fa702d?q=80&w=1036&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     number: "00-2",
-    title: "App Design",
+    title: "Web App Development",
     description:
-      "Creating intuitive app experiences that delight and empower users.",
+      "Building scalable, high-performance applications with modern architectures and clean code.",
     image:
       "https://images.unsplash.com/photo-1640920789307-1df7543f5828?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     number: "00-3",
-    title: "Brand Identity Design",
-    description: "Designing identities where story meets timeless aesthetics.",
+    title: "Performance Optimization",
+    description:
+      "Perfecting Core Web Vitals and page speed for superior user experience and search visibility.",
     image:
       "https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     number: "00-4",
-    title: "Development",
+    title: "CMS & E-commerce",
     description:
-      "Building robust digital solutions that perform and scale effortlessly.",
+      "Custom headless solutions and robust e-commerce platforms designed to scale with your business.",
     image:
       "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
@@ -92,9 +93,9 @@ export default function Services() {
               </div>
 
               <p className="text-[#0046FF] font-mono text-base leading-relaxed max-w-[30ch]">
-                I measure each project not just by numbers, but by the impact it
-                creates, the brands it strengthens, and the experiences it
-                shapes.
+                I measure success through core web vitals, organic rankings, and
+                technical performance metrics that translate into real business
+                growth.
               </p>
             </motion.div>
 

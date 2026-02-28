@@ -5,9 +5,9 @@ import Link from "next/link";
 import { useState } from "react";
 
 const socials = [
-  { label: "Linkedin", href: "#" },
-  { label: "Twitter (X)", href: "#" },
-  { label: "Instagram", href: "#" },
+  { label: "Linkedin", href: "https://www.linkedin.com/in/jamil-ifat/" },
+  { label: "Twitter (X)", href: "https://x.com/Jamil_Ifat" },
+  { label: "Instagram", href: "https://www.instagram.com/jamil.ifat/" },
   { label: "Dribbble", href: "#" },
 ];
 
@@ -182,7 +182,7 @@ export default function Footer() {
               className="font-serif text-white leading-[0.88] tracking-tight"
               style={{ fontSize: "clamp(3rem, 7vw, 7rem)" }}
             >
-              James Parker
+              Jamil Ifat
             </h2>
 
             {/* Social links pushed to bottom */}
@@ -246,7 +246,7 @@ export default function Footer() {
             Designed by: Framerze
           </span>
           <span className="font-mono text-md text-white">
-            Copyright ©James Parker, All right reserved
+            Copyright ©Jamil Ifat, All right reserved
           </span>
           <span className="font-mono text-md text-white">
             Powered by: Framer
