@@ -18,8 +18,63 @@ const ibmPlexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Jamil Ifat - Portfolio",
-  description: "Portfolio of Jamil Ifat",
+  metadataBase: new URL("https://jamilifat.com"),
+  title: {
+    default: "Jamil Ifat | SEO Specialist & Webapp Developer",
+    template: "%s | Jamil Ifat",
+  },
+  description:
+    "Building high-performance web applications engineered for search visibility and technical excellence. SEO Specialist and Full-Stack Developer driven by data and precision.",
+  keywords: [
+    "SEO Specialist",
+    "Webapp Developer",
+    "Technical SEO",
+    "Full-Stack Developer",
+    "Next.js Developer",
+    "Search Engine Optimization",
+    "React Developer",
+    "Jamil Ifat",
+  ],
+  authors: [{ name: "Jamil Ifat" }],
+  creator: "Jamil Ifat",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://jamilifat.com",
+    title: "Jamil Ifat | SEO Specialist & Webapp Developer",
+    description:
+      "High-performance web applications engineered for search visibility and technical excellence.",
+    siteName: "Jamil Ifat Portfolio",
+    images: [
+      {
+        url: "/img/profile.png",
+        width: 1200,
+        height: 630,
+        alt: "Jamil Ifat Portfolio",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Jamil Ifat | SEO Specialist & Webapp Developer",
+    description:
+      "High-performance web applications engineered for search visibility and technical excellence.",
+    images: ["/img/profile.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: "/",
+  },
 };
 
 export default function RootLayout({

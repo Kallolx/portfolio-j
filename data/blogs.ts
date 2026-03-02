@@ -41,7 +41,7 @@ export const blogPosts: BlogPost[] = [
       },
     ],
     author: {
-      image: "/img/author.jpg", // Update with your actual author image path
+      image: "/img/profile.png",
       name: "Jamil Ifat",
       role: "Design Head @ Jamil Creatives",
       quote:
@@ -78,7 +78,7 @@ export const blogPosts: BlogPost[] = [
       },
     ],
     author: {
-      image: "/img/author.jpg",
+      image: "/img/profile.png",
       name: "Jamil Ifat",
       role: "Design Head @ Jamil Creatives",
       quote: "Simplicity is the ultimate form of sophisticated communication.",
@@ -107,7 +107,7 @@ export const blogPosts: BlogPost[] = [
       },
     ],
     author: {
-      image: "/img/author.jpg",
+      image: "/img/profile.png",
       name: "Jamil Ifat",
       role: "Design Head @ Jamil Creatives",
       quote:
@@ -136,7 +136,7 @@ export const blogPosts: BlogPost[] = [
       },
     ],
     author: {
-      image: "/img/author.jpg",
+      image: "/img/profile.png",
       name: "Jamil Ifat",
       role: "Design Head @ Jamil Creatives",
       quote:
