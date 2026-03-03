@@ -120,11 +120,11 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
-                className="w-56 h-64 md:w-38 md:h-40 bg-white rounded-lg mt-6 md:mt-8 relative overflow-hidden z-10"
+                className="w-56 h-64 md:w-38 md:h-50 bg-white rounded-lg mt-6 md:mt-4 relative overflow-hidden z-10"
               >
                 <Image
                   src="/img/profile.png"
-                  alt="Profile"
+                  alt="Profile"                  
                   fill
                   className="object-cover"
                 />
