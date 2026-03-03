@@ -3,6 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { projects } from "@/data/projects";
 
 const INTERVAL = 4500;
@@ -90,6 +91,7 @@ export default function ProjectCard() {
                 }}
                 className="flex items-center gap-2 group cursor-pointer"
               >
+                <Link href={`/case-study/${project.id}`} className="flex items-center gap-2">
                 <span className="font-mono text-sm uppercase tracking-tighter text-[var(--primary)]">
                   See Project
                 </span>
@@ -109,6 +111,7 @@ export default function ProjectCard() {
                     strokeLinejoin="round"
                   />
                 </svg>
+                </Link>
               </motion.div>
             </div>
 
